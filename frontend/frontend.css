@@ -1,0 +1,1701 @@
+:root {
+  --primaryColor: hsl(250, 84%, 67%);
+  --secondaryColor: hsl(249, 77%, 95%);
+  --headerColor: hsl(247, 93%, 95%);
+  --thirdColor: hsl(246, 71%, 97%);
+  --textColor: hsl(0, 0%, 64%);
+  --greyColor: hsl(0, 0%, 96%);
+  --whiteColor: hsl(260, 33%, 98%);
+  --blackColor: hsl(240, 1%, 26%);
+  --blackFade: hsl(0, 0%, 20%);
+  --backgroundColor: hsl(240, 100%, 99%);
+  --cardColor: rgb(215, 215, 218);
+  --purpleHoverColor: hsl(250, 35%, 39%);
+  --purpleCard: hsl(246, 71%, 97%);
+  --trBg: hsl(246, 71%, 97%);
+  --trBgOdd: hsl(244, 88%, 93%);
+  --settingsBg: rgb(248, 248, 248);
+}
+
+body {
+  background: var(--backgroundColor);
+}
+
+.actionBtn {
+  position: fixed;
+  z-index: 10;
+  background: rgba(123, 99, 241, 0.7490196078);
+  bottom: 5%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%);
+  width: 80%;
+  padding: 0.5rem;
+  text-align: center;
+  color: var(--whiteColor);
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  gap: 1rem;
+  justify-content: center;
+  -webkit-backdrop-filter: blur(1.5px);
+          backdrop-filter: blur(1.5px);
+}
+.actionBtn:hover {
+  background: var(--primaryColor);
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 0 2rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  background: var(--headerColor);
+}
+.header .logo {
+  font-size: 25px;
+  color: var(--primaryColor);
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .header .navBar {
+    position: absolute;
+    top: -18rem;
+    background: var(--primaryColor);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    right: 50%;
+    z-index: 100;
+    transition: 0.4s ease;
+  }
+  .header .navBar .navList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .header .navBar .navList .navItems {
+    margin: 0.5rem 0;
+  }
+  .header .navBar .navList .navItems a {
+    color: var(--whiteColor);
+    position: relative;
+  }
+  .header .navBar .navList .navItems a::after {
+    content: "";
+    position: absolute;
+    background: var(--whiteColor);
+    height: 2px;
+    width: 0px;
+    left: 0;
+    bottom: -3px;
+    transition: width 0.2s;
+  }
+  .header .navBar .navList .navItems a:hover::after {
+    width: 20px;
+  }
+  .header .navBar .smallDevices {
+    margin-top: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .header .navBar .smallDevices .btn {
+    width: 100%;
+    max-width: 200px;
+  }
+  .header .navBar .smallDevices .registerBtn {
+    border: 1px solid var(--whiteColor);
+    color: var(--whiteColor);
+  }
+  .header .navBar .smallDevices .registerBtn:hover {
+    background: var(--whiteColor);
+    color: var(--primaryColor);
+  }
+  .header .navBar .smallDevices .loginBtn {
+    background: var(--whiteColor);
+    border: 1px solid transparent;
+  }
+  .header .navBar .smallDevices .loginBtn:hover {
+    border: 1px solid var(--whiteColor);
+    background: none;
+    color: var(--whiteColor);
+  }
+  .header .navBar .closeNavbar {
+    position: absolute;
+    bottom: -40px;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--primaryColor);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header .navBar .closeNavbar .icon {
+    color: var(--whiteColor);
+    transition: 0.3s ease;
+  }
+  .header .navBar .closeNavbar .icon:hover {
+    transform: rotate(359deg);
+  }
+  .header .largerDevices {
+    display: none;
+  }
+}
+.header .show {
+  top: 18rem;
+}
+.header .toggleBtn {
+  color: var(--primaryColor);
+}
+.header .toggleBtn:hover {
+  color: var(--blackColor);
+}
+
+.homeSection {
+  padding: 5rem 1.5rem 2rem;
+  background: var(--thirdColor);
+}
+.homeSection .homeContainer {
+  gap: 2rem;
+}
+.homeSection .homeContainer .homeText .text {
+  display: block;
+  background: white;
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 14px;
+  color: var(--primaryColor);
+  width: -moz-max-content;
+  width: max-content;
+}
+.homeSection .homeContainer .homeText span {
+  color: var(--primaryColor);
+}
+.homeSection .homeContainer .homeText .title {
+  color: var(--blackColor);
+  line-height: 2rem;
+  padding: 1rem 0;
+}
+.homeSection .homeContainer .homeText p {
+  color: var(--blackColor);
+}
+
+.guideSection .secContainer .contentDiv {
+  gap: 1.5rem;
+}
+.guideSection .secContainer .contentDiv .singleDiv {
+  display: grid;
+  gap: 0.5rem;
+  text-align: center;
+}
+.guideSection .secContainer .contentDiv .singleDiv .iconDiv {
+  width: -moz-max-content;
+  width: max-content;
+  margin: auto;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+.guideSection .secContainer .contentDiv .singleDiv .iconDiv img {
+  width: 50px;
+}
+.guideSection .secContainer .contentDiv .singleDiv .purpleBg {
+  background: rgb(255, 244, 225);
+}
+.guideSection .secContainer .contentDiv .singleDiv .orangeBg {
+  background: rgb(225, 227, 255);
+}
+.guideSection .secContainer .contentDiv .singleDiv .maroonBg {
+  background: rgb(216, 255, 206);
+}
+.guideSection .secContainer .contentDiv .singleDiv .guideDesc .guideTitle {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--blackColor);
+}
+.guideSection .secContainer .contentDiv .singleDiv .guideDesc p {
+  padding: 0 2rem;
+}
+
+.popularCars {
+  background: var(--thirdColor);
+}
+.popularCars .secContainer .img {
+  width: 20px;
+  height: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.popularCars .secContainer .contentDiv {
+  display: grid;
+  gap: 2rem;
+}
+.popularCars .secContainer .contentDiv .filterBtns {
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+.popularCars .secContainer .contentDiv .filterBtns .singleFilter {
+  justify-content: center;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 3px;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+.popularCars .secContainer .contentDiv .filterBtns .singleFilter:hover {
+  background: var(--primaryColor);
+  color: var(--whiteColor);
+}
+.popularCars .secContainer .contentDiv .filterBtns .singleFilter:hover .img {
+  mix-blend-mode: luminosity;
+}
+.popularCars .secContainer .contentDiv .filterBtns .singleFilter .companyName {
+  font-size: 14px;
+}
+.popularCars .secContainer .contentDiv .filterBtns .active {
+  background: var(--primaryColor);
+  color: var(--whiteColor);
+}
+.popularCars .secContainer .contentDiv .filterBtns .active .img {
+  mix-blend-mode: luminosity;
+}
+.popularCars .secContainer .contentDiv .carsContainer .singleCompany .singleCar {
+  height: 100%;
+}
+
+.services .secContainer .content .secText .headerDiv {
+  padding-bottom: 1rem;
+}
+.services .secContainer .content .secText .headerDiv .bigText {
+  line-height: 1.8rem;
+  color: var(--blackColor);
+  font-size: 25px;
+}
+.services .secContainer .content .secText .headerDiv p {
+  color: var(--blackColor);
+  font-size: 14px;
+}
+.services .secContainer .content .secText .servicesGrid {
+  gap: 1rem;
+}
+.services .secContainer .content .secText .servicesGrid .singleService {
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+.services .secContainer .content .secText .servicesGrid .singleService:hover .serviceDesc .serviceTitle {
+  color: var(--primaryColor);
+}
+.services .secContainer .content .secText .servicesGrid .singleService .iconDiv {
+  display: flex;
+  align-items: center;
+  transform: translateY(5px);
+  padding: 5px;
+  border-radius: 3px;
+  background: var(--secondaryColor);
+}
+.services .secContainer .content .secText .servicesGrid .singleService .iconDiv .icon {
+  font-size: 14px;
+  color: var(--primaryColor);
+}
+.services .secContainer .content .secText .servicesGrid .singleService .serviceDesc .serviceTitle {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--blackColor);
+}
+
+.subscription {
+  padding: 3rem 0;
+  background: var(--thirdColor);
+}
+.subscription .secContent {
+  flex-direction: column;
+  gap: 2rem;
+}
+.subscription .secContent .textDiv .bigText {
+  line-height: 1.8rem;
+  color: var(--blackColor);
+  font-size: 25px;
+}
+.subscription .secContent .textDiv p {
+  color: var(--blackColor);
+  font-size: 14px;
+  padding: 1rem 0;
+}
+.subscription .secContent .textDiv .form {
+  background: white;
+  padding: 5px;
+  border-radius: 3px;
+  justify-content: space-between;
+}
+.subscription .secContent .textDiv .form input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0 5px;
+  font-weight: 500;
+}
+.subscription .secContent .textDiv .form .btn {
+  border-radius: 3px;
+  margin: inherit;
+}
+
+.review .secContainer .secHeading {
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.review .secContainer .secHeading .navBtns {
+  gap: 0.5rem;
+}
+.review .secContainer .secHeading .navBtns .icon {
+  padding: 3px 5px;
+  background: var(--secondaryColor);
+  border-radius: 3px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.review .secContainer .secHeading .navBtns .icon:hover {
+  background: var(--primaryColor);
+  color: var(--whiteColor);
+}
+.review .secContainer .reviewContainer {
+  gap: 1.5rem;
+}
+.review .secContainer .reviewContainer .singleReview {
+  transition: 0.3s ease-in-out;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+.review .secContainer .reviewContainer .singleReview .ImgDiv {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 5px solid transparent;
+  overflow: hidden;
+}
+.review .secContainer .reviewContainer .singleReview .ImgDiv img {
+  height: 100%;
+  width: 100%;
+}
+.review .secContainer .reviewContainer .singleReview .reviewDetails {
+  padding: 0 1rem 1rem;
+}
+.review .secContainer .reviewContainer .singleReview .reviewDetails .reviewTitle {
+  color: var(--blackColor);
+  font-size: 16px;
+  padding-top: 10px;
+}
+.review .secContainer .reviewContainer .singleReview .reviewDetails .desc {
+  color: var(--blackColor);
+  opacity: 0.7;
+  font-size: 14px;
+}
+.review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv {
+  justify-content: space-between;
+  margin-top: 1rem;
+  align-items: flex-start;
+}
+.review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv .leftDiv {
+  gap: 0.8rem;
+}
+.review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv .leftDiv .reviewerImg {
+  border: 2px solid var(--whiteColor);
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 4px 5px rgb(222, 222, 222);
+}
+.review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv .leftDiv .aboutReviewer .name {
+  color: var(--blackColor);
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  font-size: 15px;
+}
+.review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv .leftDiv .aboutReviewer p {
+  color: var(--textColor);
+  font-size: 14px;
+}
+.review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv .rightDiv {
+  gap: 0.3rem;
+}
+.review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv .rightDiv .icon {
+  color: rgb(255, 162, 0);
+  font-size: 15px;
+}
+.review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv .rightDiv blockquote {
+  font-weight: 600;
+  font-size: 14px;
+}
+.review .secContainer .reviewContainer .singleReview:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 4px 10px rgba(192, 206, 241, 0.537);
+}
+.review .secContainer .reviewContainer .singleReview:hover .reviewDetails {
+  padding: 0 1rem 1rem;
+}
+
+.footer {
+  padding-top: 4rem;
+}
+.footer .footerContainer .footerMenuDiv {
+  padding: 2rem;
+  background: var(--thirdColor);
+  border-radius: 10px;
+  gap: 1.5rem;
+}
+.footer .footerContainer .footerMenuDiv .singleGrid .footerTitle {
+  display: block;
+  padding-bottom: 0.5rem;
+  font-size: 16px;
+  color: var(--blackColor);
+  font-weight: 700;
+}
+.footer .footerContainer .footerMenuDiv .singleGrid .footerUl {
+  gap: 5px;
+}
+.footer .footerContainer .footerMenuDiv .singleGrid .footerUl .footerLi {
+  color: var(--textColor);
+}
+.footer .footerContainer .footerMenuDiv .singleGrid .footerUl .footerLi:hover {
+  color: var(--blackColor);
+  transform: translateX(5px);
+  transition: 0.3s;
+}
+.footer .footerContainer .lowerDiv {
+  padding: 1rem;
+  text-align: center;
+}
+.footer .footerContainer .lowerDiv .blockquote a {
+  color: var(--blackColor);
+}
+.footer .footerContainer .lowerDiv .blockquote a:hover {
+  color: var(--primaryColor);
+}
+
+.carCatalogue {
+  padding-top: 6rem;
+}
+.carCatalogue .secContainer .carsContainer .singleCompany .singleCar {
+  background: var(--greyColor);
+  transition: 0.3s ease;
+  height: 100%;
+}
+.carCatalogue .secContainer .carsContainer .singleCompany .singleCar:hover {
+  background: var(--thirdColor);
+  transform: translateY(-7px);
+}
+
+.carDetails .secContainer .mainSection {
+  width: 100%;
+  height: 60vh;
+  transform: translateY(-40px);
+  position: relative;
+}
+.carDetails .secContainer .mainSection::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(140deg, rgb(118, 118, 213), rgba(255, 255, 0, 0));
+}
+.carDetails .secContainer .mainSection .secText {
+  position: absolute;
+  z-index: 10;
+  color: var(--whiteColor);
+  left: 8%;
+  top: 20%;
+  max-width: 200px;
+}
+.carDetails .secContainer .mainSection .secText .carName {
+  font-size: 30px;
+}
+.carDetails .secContainer .mainSection .secText p {
+  color: var(--whiteColor);
+  line-height: 1rem;
+}
+.carDetails .secContainer .mainSection .secText .price {
+  display: block;
+  padding: 8px 15px;
+  background: var(--whiteColor);
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  color: var(--primaryColor);
+  font-weight: 700;
+}
+.carDetails .secContainer .mainSection .mainImg {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.carDetails .secContainer .mainSection .carMenu {
+  position: absolute;
+  background: var(--thirdColor);
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.carDetails .secContainer .mainSection .carMenu a {
+  padding: 1rem 0.5rem;
+  width: 100%;
+  font-size: 14px;
+  border-bottom: 3px solid transparent;
+  text-align: center;
+}
+.carDetails .secContainer .mainSection .carMenu a:hover {
+  border-bottom: 3px solid var(--primaryColor);
+  background: var(--secondaryColor);
+  color: var(--primaryColor);
+}
+.carDetails .secContainer .overviewSection .secContainer .secTitleDiv, .carDetails .secContainer .featuresSection .secContainer .secTitleDiv {
+  text-align: left;
+}
+.carDetails .secContainer .overviewSection .secContainer .content .singleCard .title, .carDetails .secContainer .featuresSection .secContainer .content .singleCard .title {
+  color: var(--blackColor);
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+}
+.carDetails .secContainer .overviewSection .secContainer .content .singleCard .item, .carDetails .secContainer .featuresSection .secContainer .content .singleCard .item {
+  font-size: 14px;
+  color: var(--blackColor);
+  opacity: 0.8;
+}
+.carDetails .secContainer .overviewSection .content {
+  gap: 1rem;
+}
+.carDetails .secContainer .overviewSection .content .span {
+  font-size: 15px;
+}
+.carDetails .secContainer .overviewSection .content .span .ans {
+  color: var(--blackColor);
+  font-weight: 600;
+}
+.carDetails .secContainer .gallerSection .secConatiner .secTitleDiv {
+  text-align: left;
+}
+.carDetails .secContainer .gallerSection .secConatiner .content {
+  gap: 1.5rem;
+}
+.carDetails .secContainer .gallerSection .secConatiner .content .title {
+  font-size: 18px;
+  color: var(--blackColor);
+  font-weight: 700;
+  position: relative;
+}
+.carDetails .secContainer .gallerSection .secConatiner .content .title::after {
+  content: "";
+  height: 3px;
+  width: 100px;
+  position: absolute;
+  background: var(--primaryColor);
+  right: 0;
+  top: 50%;
+}
+.carDetails .secContainer .gallerSection .secConatiner .content .exteriorDiv .carImages, .carDetails .secContainer .gallerSection .secConatiner .content .interior .carImages {
+  gap: 1rem;
+}
+.carDetails .secContainer .gallerSection .secConatiner .content .exteriorDiv .carImages .singleImage, .carDetails .secContainer .gallerSection .secConatiner .content .interior .carImages .singleImage {
+  height: 200px;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.carDetails .secContainer .gallerSection .secConatiner .content .exteriorDiv .carImages .singleImage img, .carDetails .secContainer .gallerSection .secConatiner .content .interior .carImages .singleImage img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 2s ease;
+}
+.carDetails .secContainer .gallerSection .secConatiner .content .exteriorDiv .carImages .singleImage::after, .carDetails .secContainer .gallerSection .secConatiner .content .interior .carImages .singleImage::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: rgba(173, 190, 241, 0.5333333333);
+  position: absolute;
+  top: 0;
+  right: 0;
+  mix-blend-mode: hue;
+}
+.carDetails .secContainer .gallerSection .secConatiner .content .exteriorDiv .carImages .singleImage:hover::after, .carDetails .secContainer .gallerSection .secConatiner .content .interior .carImages .singleImage:hover::after {
+  display: none;
+  mix-blend-mode: normal;
+}
+.carDetails .secContainer .gallerSection .secConatiner .content .exteriorDiv .carImages .singleImage:hover img, .carDetails .secContainer .gallerSection .secConatiner .content .interior .carImages .singleImage:hover img {
+  transform: scale(1.1);
+}
+
+.alternatives .secContainer .carsContainer .singleCompany .singleCar {
+  background: var(--greyColor);
+  transition: 0.3s ease;
+}
+.alternatives .secContainer .carsContainer .singleCompany .singleCar:hover {
+  background: var(--thirdColor);
+  transform: translateY(-7px);
+}
+
+.hide {
+  display: none;
+}
+
+.live {
+  display: grid;
+}
+
+.loginPage, .signUp {
+  padding-top: 6rem;
+  flex-direction: column;
+}
+.loginPage form, .signUp form {
+  width: 100%;
+}
+.loginPage label, .signUp label {
+  display: block;
+  font-weight: 600;
+  color: var(--blackColor);
+}
+.loginPage input, .signUp input {
+  display: block;
+  border: 2px solid transparent;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  background: var(--secondaryColor);
+  width: 100%;
+  margin-top: 0.2rem;
+  color: var(--primaryColor);
+  font-weight: 600;
+}
+.loginPage input:focus, .signUp input:focus {
+  border: 2px solid var(--primaryColor);
+}
+.loginPage .btn, .signUp .btn {
+  border-radius: 5px;
+  gap: 0.3rem;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 16px;
+}
+.loginPage .registerLink, .signUp .registerLink {
+  display: block;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.reviewSection .secContainer .formSection .reviewForm {
+  gap: 0.8rem;
+}
+.reviewSection .secContainer .formSection .reviewForm .singleField {
+  gap: 0.5rem;
+}
+.reviewSection .secContainer .formSection .reviewForm .singleField label {
+  color: var(--blackColor);
+  font-weight: 600;
+  opacity: 0.8;
+  display: block;
+}
+.reviewSection .secContainer .formSection .reviewForm .singleField input, .reviewSection .secContainer .formSection .reviewForm .singleField textarea {
+  background: var(--secondaryColor);
+  font-weight: 700;
+  width: 100%;
+  color: var(--primaryColor);
+  border: 2px solid transparent;
+}
+.reviewSection .secContainer .formSection .reviewForm .singleField input::-moz-placeholder, .reviewSection .secContainer .formSection .reviewForm .singleField textarea::-moz-placeholder {
+  color: var(--blackColor);
+  opacity: 0.7;
+  font-weight: 500;
+}
+.reviewSection .secContainer .formSection .reviewForm .singleField input::placeholder, .reviewSection .secContainer .formSection .reviewForm .singleField textarea::placeholder {
+  color: var(--blackColor);
+  opacity: 0.7;
+  font-weight: 500;
+}
+.reviewSection .secContainer .formSection .reviewForm .singleField input:focus, .reviewSection .secContainer .formSection .reviewForm .singleField textarea:focus {
+  border: 2px solid var(--primaryColor);
+}
+.reviewSection .secContainer .formSection .reviewForm .singleField textarea {
+  border-radius: 3px;
+  padding: 1rem;
+  height: 200px;
+}
+.reviewSection .secContainer .formSection .reviewForm .primaryBtn {
+  margin: auto;
+  justify-content: center;
+}
+.reviewSection .secContainer .formSection .reviewForm .btn {
+  margin: inherit;
+  font-size: 17px;
+}
+
+.staffDetails .secContanier .secTitleDiv {
+  text-align: left;
+}
+.staffDetails .secContanier .secTitleDiv p {
+  text-align: left;
+  margin: 0;
+}
+.staffDetails .secContanier .inforSection {
+  width: 100%;
+  gap: 1rem;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.staffDetails .secContanier .inforSection .leftDiv {
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 100%;
+}
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv {
+  gap: 1.5rem;
+}
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .imgDiv {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  border-bottom-right-radius: 10px;
+  background: #000;
+}
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .imgDiv img {
+  border-bottom-right-radius: 10px;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .staffBio {
+  padding-top: 1rem;
+  flex: 1;
+}
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .staffBio .name {
+  color: var(--primaryColor);
+  font-size: 25px;
+}
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .staffBio .badge {
+  margin: 0.5rem 0;
+  padding: 2px 10px;
+  background: var(--primaryColor);
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 5px;
+  color: white;
+  font-size: 13px;
+  gap: 0.2rem;
+}
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .staffBio .badge .icon {
+  font-size: 15px;
+}
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .staffBio .nationality, .staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .staffBio .lang, .staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .staffBio .time {
+  font-size: 17px;
+  padding: 0.2rem 0;
+}
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .staffBio .nationality span, .staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .staffBio .lang span, .staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .staffBio .time span {
+  color: var(--blackFade);
+  opacity: 0.7;
+  font-size: 500;
+}
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .personalInfor {
+  padding-top: 1rem;
+}
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .personalInfor h4 {
+  font-size: 20px;
+  color: var(--blackColor);
+  display: block;
+  padding-bottom: 0.5rem;
+}
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .personalInfor .properties,
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .personalInfor .ID,
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .personalInfor .exp,
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .personalInfor .comp {
+  font-size: 17px;
+  padding: 0.1rem 0;
+}
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .personalInfor .properties span,
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .personalInfor .ID span,
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .personalInfor .exp span,
+.staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .personalInfor .comp span {
+  color: var(--blackFade);
+  opacity: 0.7;
+  font-size: 500;
+}
+.staffDetails .secContanier .inforSection .leftDiv .bottomLeftDiv {
+  padding: 1rem 0;
+}
+.staffDetails .secContanier .inforSection .leftDiv .bottomLeftDiv h4 {
+  color: var(--primaryColor);
+  font-size: 20px;
+  padding-bottom: 0.5rem;
+  justify-content: space-between;
+}
+.staffDetails .secContanier .inforSection .leftDiv .bottomLeftDiv h4 span {
+  height: 2px;
+  width: 50%;
+  background: var(--cardColor);
+}
+.staffDetails .secContanier .inforSection .rightDiv {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+.staffDetails .secContanier .inforSection .rightDiv .topRightDiv, .staffDetails .secContanier .inforSection .rightDiv .reminderDiv {
+  height: 100%;
+  width: 100%;
+  background: var(--trBg);
+  padding: 1rem;
+  text-align: center;
+  border-radius: 5px;
+}
+.staffDetails .secContanier .inforSection .rightDiv .topRightDiv h3, .staffDetails .secContanier .inforSection .rightDiv .reminderDiv h3 {
+  padding: 0.5rem 0;
+  color: var(--primaryColor);
+}
+.staffDetails .secContanier .inforSection .rightDiv .topRightDiv .phone, .staffDetails .secContanier .inforSection .rightDiv .topRightDiv .email a, .staffDetails .secContanier .inforSection .rightDiv .reminderDiv .phone, .staffDetails .secContanier .inforSection .rightDiv .reminderDiv .email a {
+  background: var(--purpleHoverColor);
+  text-align: center;
+  justify-content: center;
+  margin: 0.3rem 0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  color: white;
+  gap: 0.3rem;
+  width: 100%;
+  border: 1.5px solid transparent;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.staffDetails .secContanier .inforSection .rightDiv .topRightDiv .phone:hover, .staffDetails .secContanier .inforSection .rightDiv .topRightDiv .email a:hover, .staffDetails .secContanier .inforSection .rightDiv .reminderDiv .phone:hover, .staffDetails .secContanier .inforSection .rightDiv .reminderDiv .email a:hover {
+  background: var(--purpleCard);
+  color: var(--primaryColor);
+  border: 1.5px solid var(--primaryColor);
+}
+.staffDetails .secContanier .inforSection .rightDiv .topRightDiv .socials, .staffDetails .secContanier .inforSection .rightDiv .reminderDiv .socials {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+.staffDetails .secContanier .inforSection .rightDiv .topRightDiv .socials .icon, .staffDetails .secContanier .inforSection .rightDiv .reminderDiv .socials .icon {
+  margin-top: 2rem;
+  color: var(--primaryColor);
+  padding: 5px 10px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+.staffDetails .secContanier .inforSection .rightDiv .topRightDiv .socials .icon:hover, .staffDetails .secContanier .inforSection .rightDiv .reminderDiv .socials .icon:hover {
+  background: var(--purpleHoverColor);
+  color: white;
+}
+.staffDetails .secContanier .inforSection .rightDiv .reminderDiv textarea {
+  width: 100%;
+  height: 70px;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+}
+.staffDetails .secContanier .inforSection .rightDiv .reminderDiv textarea:hover {
+  outline: none;
+  border: 2px solid var(--primaryColor);
+}
+.staffDetails .secContanier .inforSection .rightDiv .reminderDiv .btn {
+  width: 100%;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 5px;
+  background: var(--primaryColor);
+}
+
+@media screen and (min-width: 520px) {
+  .homeSection .homeContainer .homeText p {
+    font-size: 18px;
+    max-width: 500px;
+  }
+  .guideSection .secContainer .contentDiv {
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .guideSection .secContainer .contentDiv .singleDiv {
+    gap: 1rem;
+  }
+  .guideSection .secContainer .contentDiv .singleDiv .guideDesc .guideTitle {
+    font-size: 18px;
+  }
+  .guideSection .secContainer .contentDiv .singleDiv .guideDesc p {
+    padding: 0 2rem;
+  }
+  .popularCars .secContainer .filterBtns, .carCatalogue .secContainer .filterBtns, .alternatives .secContainer .filterBtns {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  .popularCars .secContainer .carsContainer .singleCompany .singleCar .price_seller .btn, .carCatalogue .secContainer .carsContainer .singleCompany .singleCar .price_seller .btn, .alternatives .secContainer .carsContainer .singleCompany .singleCar .price_seller .btn {
+    font-size: 16px;
+    padding: 0.4rem 2rem;
+  }
+  .services .secContainer .content .secText .headerDiv {
+    padding-bottom: 1.5rem;
+  }
+  .services .secContainer .content .secText .headerDiv .bigText {
+    font-size: 30px;
+  }
+  .services .secContainer .content .secText .headerDiv p {
+    font-size: 16px;
+  }
+  .services .secContainer .content .secText .servicesGrid .singleService .iconDiv .icon {
+    font-size: 17px;
+  }
+  .services .secContainer .content .secText .servicesGrid .singleService .serviceDesc .serviceTitle {
+    font-size: 18px;
+  }
+  .services .secContainer .content .secText .servicesGrid .singleService .serviceDesc p {
+    font-size: 16px;
+  }
+  .subscription .secContent .textDiv .bigText {
+    font-size: 30px;
+  }
+  .subscription .secContent .textDiv p {
+    font-size: 16px;
+  }
+  .subscription .secContent .textDiv .form input {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0 5px;
+    font-weight: 500;
+  }
+  .subscription .secContent .textDiv .form .btn {
+    border-radius: 3px;
+    margin: inherit;
+  }
+  .footer .footerContainer .footerMenuDiv {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer .footerContainer .footerMenuDiv .singleGrid {
+    margin: auto;
+  }
+  .footer .footerContainer .footerMenuDiv .singleGrid .footerTitle {
+    font-size: 17px;
+  }
+  .footer .footerContainer .footerMenuDiv .singleGrid .footerUl {
+    gap: 5px;
+  }
+  .footer .footerContainer .footerMenuDiv .singleGrid .footerUl .footerLi {
+    color: var(--textColor);
+  }
+  .footer .footerContainer .lowerDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .carDetails .secContainer .mainSection .secText {
+    max-width: 300px;
+  }
+  .carDetails .secContainer .mainSection .secText .carName {
+    font-size: 35px;
+  }
+  .carDetails .secContainer .mainSection .secText p {
+    font-size: 16px;
+    color: var(--whiteColor);
+    line-height: 1.5rem;
+  }
+  .carDetails .secContainer .mainSection .secText .price {
+    padding: 8px 20px;
+    margin-top: 1rem;
+    font-size: 20px;
+  }
+  .carDetails .secContainer .mainSection .carMenu a {
+    font-size: 15px;
+  }
+  .carDetails .secContainer .overviewSection .secContainer .secTitleDiv p, .carDetails .secContainer .featuresSection .secContainer .secTitleDiv p {
+    text-align: left;
+    margin: 0;
+    font-size: 16px;
+  }
+  .carDetails .secContainer .overviewSection .secContainer .content, .carDetails .secContainer .featuresSection .secContainer .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .carDetails .secContainer .overviewSection .secContainer .content .singleCard .title, .carDetails .secContainer .featuresSection .secContainer .content .singleCard .title {
+    font-size: 20px;
+  }
+  .carDetails .secContainer .overviewSection .secContainer .content .singleCard .item, .carDetails .secContainer .featuresSection .secContainer .content .singleCard .item {
+    font-size: 16px;
+  }
+  .carDetails .secContainer .overviewSection .content {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+  .carDetails .secContainer .overviewSection .content .span {
+    font-size: 18px;
+  }
+  .carDetails .secContainer .gallerSection .secConatiner .secTitleDiv p {
+    text-align: left;
+    margin: 0;
+    font-size: 16px;
+  }
+  .carDetails .secContainer .gallerSection .secConatiner .content .title {
+    font-size: 20px;
+  }
+  .carDetails .secContainer .gallerSection .secConatiner .content .carImages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .loginPage .registerLink, .signUp .registerLink {
+    text-align: left;
+  }
+  .loginPage .secContainer .formSection .loginForm, .loginPage .secContainer .formSection .signUpForm, .signUp .secContainer .formSection .loginForm, .signUp .secContainer .formSection .signUpForm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .loginPage .secContainer .formSection .loginForm .btn, .loginPage .secContainer .formSection .signUpForm .btn, .signUp .secContainer .formSection .loginForm .btn, .signUp .secContainer .formSection .signUpForm .btn {
+    transform: translateY(12px);
+  }
+  .staffDetails .secContanier p {
+    font-size: 18px;
+    line-height: 1.7rem;
+  }
+  .staffDetails .secContanier .inforSection {
+    flex-direction: column;
+  }
+  .staffDetails .secContanier .inforSection .leftDiv {
+    width: 100%;
+  }
+  .staffDetails .secContanier .inforSection .leftDiv .topLeftDiv {
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+  .staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .imgDiv {
+    height: 200px;
+  }
+  .staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .staffBio {
+    padding-top: 1rem;
+    flex: 1;
+  }
+  .staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .staffBio .name {
+    color: var(--primaryColor);
+    font-size: 25px;
+  }
+  .staffDetails .secContanier .inforSection .rightDiv {
+    flex-direction: row;
+  }
+  .reviewSection .secContainer .formSection .reviewForm {
+    gap: 0.8rem;
+    align-items: start;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 620px) {
+  .popularCars .secContainer .carsContainer .singleCompany, .carCatalogue .secContainer .carsContainer .singleCompany, .alternatives .secContainer .carsContainer .singleCompany {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .popularCars .secContainer .carsContainer .singleCompany .singleCar .price_seller .btn, .carCatalogue .secContainer .carsContainer .singleCompany .singleCar .price_seller .btn, .alternatives .secContainer .carsContainer .singleCompany .singleCar .price_seller .btn {
+    font-size: 16px;
+    padding: 0.4rem 2rem;
+  }
+  .services .secContainer .content .secText .headerDiv {
+    padding-bottom: 1.5rem;
+  }
+  .services .secContainer .content .secText .headerDiv .bigText {
+    font-size: 30px;
+  }
+  .services .secContainer .content .secText .headerDiv p {
+    font-size: 16px;
+  }
+  .services .secContainer .content .secText .servicesGrid {
+    padding: 1rem 0 2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .services .secContainer .content .secText .servicesGrid .singleService .iconDiv .icon {
+    font-size: 17px;
+  }
+  .services .secContainer .content .secText .servicesGrid .singleService .serviceDesc .serviceTitle {
+    font-size: 18px;
+  }
+  .services .secContainer .content .secText .servicesGrid .singleService .serviceDesc p {
+    font-size: 16px;
+  }
+  .review .secContainer .reviewContainer {
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .review .secContainer .reviewContainer .singleReview .reviewDetails .reviewTitle {
+    font-size: 18px;
+  }
+  .review .secContainer .reviewContainer .singleReview .reviewDetails .desc {
+    font-size: 16px;
+  }
+  .review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv .leftDiv .reviewerImg {
+    height: 50px;
+    width: 50px;
+  }
+  .review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv .leftDiv .aboutReviewer .name {
+    font-size: 16px;
+  }
+  .review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv .leftDiv .aboutReviewer p {
+    font-size: 15px;
+  }
+  .review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv .rightDiv .icon {
+    font-size: 17px;
+  }
+  .review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv .rightDiv blockquote {
+    font-size: 17px;
+  }
+  .carCatalogue {
+    padding-top: 6rem;
+  }
+  .carCatalogue .secContainer .searchField .form .inputDiv {
+    gap: 0.5rem;
+  }
+  .carCatalogue .secContainer .searchField .form .inputDiv label {
+    color: var(--blackColor);
+    font-weight: 600;
+    opacity: 0.8;
+    display: block;
+  }
+  .carCatalogue .secContainer .searchField .form .inputDiv input {
+    background: var(--secondaryColor);
+    font-weight: 700;
+    color: var(--primaryColor);
+    border: 2px solid transparent;
+  }
+  .carCatalogue .secContainer .searchField .form .inputDiv input::-moz-placeholder {
+    color: var(--blackColor);
+    opacity: 0.7;
+  }
+  .carCatalogue .secContainer .searchField .form .inputDiv input::placeholder {
+    color: var(--blackColor);
+    opacity: 0.7;
+  }
+  .carCatalogue .secContainer .searchField .form .inputDiv input:focus {
+    border: 2px solid var(--primaryColor);
+  }
+  .carCatalogue .secContainer .searchField .form .btn {
+    margin: inherit;
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 680px) {
+  .guideSection .secContainer .contentDiv {
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .guideSection .secContainer .contentDiv .singleDiv {
+    gap: 1rem;
+  }
+  .guideSection .secContainer .contentDiv .singleDiv .guideDesc .guideTitle {
+    font-size: 18px;
+  }
+  .guideSection .secContainer .contentDiv .singleDiv .guideDesc p {
+    padding: 0 2rem;
+    font-size: 18px;
+  }
+  .subscription .secContent .textDiv .bigText {
+    font-size: 33px;
+  }
+  .subscription .secContent .textDiv p {
+    font-size: 16px;
+  }
+  .subscription .secContent .textDiv .form input {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .subscription .secContent .textDiv .form .btn {
+    border-radius: 3px;
+    margin: inherit;
+    font-size: 18px;
+  }
+  .subscription .secContent .sectionImage {
+    justify-content: center;
+  }
+  .subscription .secContent .sectionImage img {
+    max-width: 80%;
+  }
+}
+@media screen and (min-width: 750px) {
+  .homeSection .homeContainer .homeText .text {
+    font-size: 18px;
+  }
+  .homeSection .homeContainer .homeText .title {
+    line-height: 2.5rem;
+    font-size: 40px;
+    max-width: 700px;
+  }
+  .guideSection .secContainer .contentDiv {
+    padding: 2rem 0;
+  }
+  .guideSection .secContainer .contentDiv .singleDiv .iconDiv img {
+    width: 90px;
+  }
+  .guideSection .secContainer .contentDiv .singleDiv .guideDesc .guideTitle {
+    font-size: 23px;
+  }
+  .guideSection .secContainer .contentDiv .singleDiv .guideDesc p {
+    font-size: 17px;
+  }
+  .actionBtn {
+    width: 50%;
+  }
+  .loginPage .registerLink, .signUp .registerLink {
+    text-align: left;
+  }
+  .loginPage .secContainer .formSection .loginForm, .loginPage .secContainer .formSection .signUpForm, .signUp .secContainer .formSection .loginForm, .signUp .secContainer .formSection .signUpForm {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .loginPage .secContainer .formSection .loginForm .btn, .loginPage .secContainer .formSection .signUpForm .btn, .signUp .secContainer .formSection .loginForm .btn, .signUp .secContainer .formSection .signUpForm .btn {
+    transform: translateY(0px);
+  }
+}
+@media screen and (min-width: 769px) {
+  .header {
+    padding: 0 2rem;
+  }
+  .header .navBar .navList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .header .navBar .navList .navItems {
+    margin: 0 1rem;
+  }
+  .header .navBar .navList .navItems a {
+    color: var(--blackColor);
+    position: relative;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .header .navBar .navList .navItems a::after {
+    content: "";
+    position: absolute;
+    background: var(--primaryColor);
+    height: 2px;
+    width: 0px;
+    left: 0;
+    bottom: -3px;
+    transition: width 0.2s;
+  }
+  .header .navBar .navList .navItems a:hover {
+    color: var(--primaryColor);
+  }
+  .header .navBar .navList .navItems a:hover::after {
+    width: 20px;
+  }
+  .header .closeNavbar, .header .toggleBtn, .header .smallDevices {
+    display: none;
+  }
+  .header .largerDevices {
+    display: flex;
+    gap: 1rem;
+  }
+  .header .largerDevices .btn {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 2rem;
+    font-weight: 600;
+  }
+  .header .largerDevices .registerBtn {
+    border: 1px solid var(--primaryColor);
+    color: var(--primaryColor);
+  }
+  .header .largerDevices .registerBtn:hover {
+    background: var(--primaryColor);
+    color: var(--whiteColor);
+  }
+  .header .largerDevices .loginBtn {
+    background: var(--primaryColor);
+    border: 1px solid transparent;
+    color: var(--whiteColor);
+  }
+  .header .largerDevices .loginBtn:hover {
+    border: 1px solid var(--primaryColor);
+    background: none;
+    color: var(--primaryColor);
+  }
+  .homeSection .homeContainer .homeText .text {
+    font-size: 18px;
+  }
+  .homeSection .homeContainer .homeText .title {
+    line-height: 2.5rem;
+    font-size: 40px;
+    max-width: 700px;
+  }
+  .homeSection .homeContainer .homeImage img {
+    max-width: 80%;
+    margin: auto;
+  }
+  .services .secContainer .content .secText .headerDiv {
+    padding-bottom: 1.5rem;
+  }
+  .services .secContainer .content .secText .headerDiv .bigText {
+    font-size: 30px;
+  }
+  .services .secContainer .content .secText .headerDiv p {
+    font-size: 16px;
+  }
+  .services .secContainer .content .secText .servicesGrid .singleService .iconDiv .icon {
+    font-size: 17px;
+  }
+  .staffDetails .secContanier p {
+    font-size: 18px;
+    line-height: 1.7rem;
+  }
+  .staffDetails .secContanier .inforSection {
+    flex-direction: column;
+  }
+  .staffDetails .secContanier .inforSection .leftDiv {
+    width: 100%;
+  }
+  .staffDetails .secContanier .inforSection .leftDiv .topLeftDiv {
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+  .staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .imgDiv {
+    height: 200px;
+  }
+  .staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .staffBio {
+    padding-top: 1rem;
+    flex: 1;
+  }
+  .staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .staffBio .name {
+    color: var(--primaryColor);
+    font-size: 25px;
+  }
+  .staffDetails .secContanier .inforSection .rightDiv {
+    display: flex;
+    align-items: start;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .footer .footerContainer .footerMenuDiv {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 840px) {
+  .header {
+    padding: 0 4rem;
+  }
+  .header .navBar .navList .navItems a {
+    font-size: 14px;
+  }
+  .homeSection .homeContainer {
+    height: 70vh;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: hidden;
+  }
+  .homeSection .homeContainer .homeText {
+    padding-left: 2rem;
+  }
+  .homeSection .homeContainer .homeText .text {
+    font-size: 18px;
+  }
+  .homeSection .homeContainer .homeText .title {
+    line-height: 2.5rem;
+    font-size: 45px;
+  }
+  .homeSection .homeContainer .homeText p {
+    font-size: 16px;
+  }
+  .homeSection .homeContainer .homeImage {
+    width: 800px;
+  }
+  .footer .footerContainer {
+    padding: 2rem 0;
+  }
+  .footer .footerContainer .footerMenuDiv {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .carDetails .secContainer .mainSection .secText {
+    max-width: 400px;
+    padding-left: 3rem;
+  }
+  .carDetails .secContainer .mainSection .secText .carName {
+    font-size: 45px;
+  }
+  .carDetails .secContainer .mainSection .secText p {
+    font-size: 16px;
+    color: var(--whiteColor);
+    line-height: 1.5rem;
+  }
+  .carDetails .secContainer .mainSection .secText .price {
+    padding: 8px 20px;
+    margin-top: 1rem;
+    font-size: 20px;
+  }
+  .carDetails .secContainer .mainSection .carMenu a {
+    font-size: 15px;
+  }
+  .carDetails .secContainer .overviewSection .secContainer .secTitleDiv p, .carDetails .secContainer .featuresSection .secContainer .secTitleDiv p {
+    text-align: left;
+    margin: 0;
+    font-size: 16px;
+  }
+  .carDetails .secContainer .overviewSection .secContainer .content, .carDetails .secContainer .featuresSection .secContainer .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .carDetails .secContainer .overviewSection .secContainer .content .singleCard .title, .carDetails .secContainer .featuresSection .secContainer .content .singleCard .title {
+    font-size: 20px;
+  }
+  .carDetails .secContainer .overviewSection .secContainer .content .singleCard .item, .carDetails .secContainer .featuresSection .secContainer .content .singleCard .item {
+    font-size: 16px;
+  }
+  .carDetails .secContainer .overviewSection .content {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+  .carDetails .secContainer .overviewSection .content .span {
+    font-size: 18px;
+  }
+  .carDetails .secContainer .gallerSection .secConatiner .secTitleDiv p {
+    text-align: left;
+    margin: 0;
+    font-size: 16px;
+  }
+  .carDetails .secContainer .gallerSection .secConatiner .content .title {
+    font-size: 20px;
+  }
+  .carDetails .secContainer .gallerSection .secConatiner .content .carImages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1040px) {
+  .popularCars .secContainer .carsContainer .singleCompany, .carCatalogue .secContainer .carsContainer .singleCompany, .alternatives .secContainer .carsContainer .singleCompany {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .subscription .secContent {
+    flex-direction: row;
+  }
+  .review .secContainer .reviewContainer {
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .review .secContainer .reviewContainer .singleReview .reviewDetails .reviewTitle {
+    font-size: 18px;
+  }
+  .review .secContainer .reviewContainer .singleReview .reviewDetails .desc {
+    font-size: 16px;
+  }
+  .review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv .leftDiv .reviewerImg {
+    height: 50px;
+    width: 50px;
+  }
+  .review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv .leftDiv .aboutReviewer .name {
+    font-size: 16px;
+  }
+  .review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv .leftDiv .aboutReviewer p {
+    font-size: 15px;
+  }
+  .review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv .rightDiv .icon {
+    font-size: 17px;
+  }
+  .review .secContainer .reviewContainer .singleReview .reviewDetails .reviewerDiv .rightDiv blockquote {
+    font-size: 17px;
+  }
+  .carCatalogue .secContainer .searchField .form {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .carDetails .secContainer .mainSection {
+    height: 70vh;
+  }
+  .carDetails .secContainer .mainSection .secText {
+    max-width: 600px;
+  }
+  .carDetails .secContainer .mainSection .secText .carName {
+    font-size: 55px;
+  }
+  .carDetails .secContainer .mainSection .secText p {
+    font-size: 18px;
+  }
+  .carDetails .secContainer .mainSection .secText .price {
+    font-size: 25px;
+  }
+  .carDetails .secContainer .overviewSection .secContainer .secTitleDiv p, .carDetails .secContainer .featuresSection .secContainer .secTitleDiv p {
+    text-align: left;
+    margin: 0;
+    font-size: 18px;
+  }
+  .carDetails .secContainer .overviewSection .secContainer .content, .carDetails .secContainer .featuresSection .secContainer .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .carDetails .secContainer .overviewSection .secContainer .content .singleCard .title, .carDetails .secContainer .featuresSection .secContainer .content .singleCard .title {
+    font-size: 22px;
+  }
+  .carDetails .secContainer .overviewSection .secContainer .content .singleCard .item, .carDetails .secContainer .featuresSection .secContainer .content .singleCard .item {
+    font-size: 18px;
+  }
+  .carDetails .secContainer .overviewSection .content {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+  .carDetails .secContainer .overviewSection .content .span {
+    font-size: 18px;
+  }
+  .carDetails .secContainer .gallerSection .secConatiner .secTitleDiv p {
+    text-align: left;
+    margin: 0;
+    font-size: 16px;
+  }
+  .carDetails .secContainer .gallerSection .secConatiner .content .title {
+    font-size: 22px;
+  }
+  .carDetails .secContainer .gallerSection .secConatiner .content .carImages {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .actionBtn {
+    width: 20%;
+    transform: translateX(140%);
+  }
+  .reviewSection .secContainer .formSection .reviewForm {
+    gap: 0.8rem;
+    align-items: start;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1124px) {
+  .services .secContainer .content .secText .headerDiv {
+    padding-bottom: 1.5rem;
+  }
+  .services .secContainer .content .secText .headerDiv .bigText {
+    font-size: 35px;
+    padding-bottom: 0.5rem;
+  }
+  .services .secContainer .content .secText .headerDiv p {
+    font-size: 18px;
+  }
+  .services .secContainer .content .secText .servicesGrid {
+    gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .services .secContainer .content .secText .servicesGrid .singleService .iconDiv .icon {
+    font-size: 20px;
+  }
+  .services .secContainer .content .secText .servicesGrid .singleService .serviceDesc .serviceTitle {
+    font-size: 20px;
+  }
+  .services .secContainer .content .secText .servicesGrid .singleService .serviceDesc p {
+    font-size: 17px;
+  }
+  .loginPage .registerLink, .signUp .registerLink {
+    text-align: left;
+  }
+  .loginPage .secContainer .formSection .loginForm, .loginPage .secContainer .formSection .signUpForm, .signUp .secContainer .formSection .loginForm, .signUp .secContainer .formSection .signUpForm {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .loginPage .secContainer .formSection .loginForm .btn, .loginPage .secContainer .formSection .signUpForm .btn, .signUp .secContainer .formSection .loginForm .btn, .signUp .secContainer .formSection .signUpForm .btn {
+    transform: translateY(14px);
+  }
+}
+@media screen and (min-width: 1140px) {
+  .header {
+    padding: 0 6rem;
+    height: 5rem;
+  }
+  .header .logo {
+    font-size: 30px;
+  }
+  .header .navBar .navList .navItems a {
+    font-size: 16px;
+  }
+  .homeSection .homeContainer {
+    height: 80vh;
+    padding: 3rem;
+  }
+  .homeSection .homeContainer .homeText {
+    padding-left: 3rem;
+  }
+  .homeSection .homeContainer .homeText .title {
+    line-height: 3rem;
+    font-size: 50px;
+  }
+  .homeSection .homeContainer .homeText p {
+    font-size: 16px;
+  }
+  .homeSection .homeContainer .homeImage {
+    width: 800px;
+  }
+  .carCatalogue .secContainer .searchField {
+    padding-bottom: 3rem;
+  }
+  .carCatalogue .secContainer .searchField .form {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .staffDetails .secContanier p {
+    font-size: 18px;
+    line-height: 1.7rem;
+  }
+  .staffDetails .secContanier .inforSection {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .staffDetails .secContanier .inforSection .leftDiv {
+    width: 100%;
+    flex-basis: 70%;
+  }
+  .staffDetails .secContanier .inforSection .leftDiv .topLeftDiv {
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+  .staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .imgDiv {
+    height: 200px;
+  }
+  .staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .staffBio {
+    padding-top: 1rem;
+    flex: 1;
+  }
+  .staffDetails .secContanier .inforSection .leftDiv .topLeftDiv .staffBio .name {
+    color: var(--primaryColor);
+    font-size: 25px;
+  }
+  .staffDetails .secContanier .inforSection .rightDiv {
+    flex-basis: 30%;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 1240px) {
+  .header {
+    padding: 0 9.5rem;
+  }
+  .homeSection .homeContainer {
+    padding: 5rem;
+  }
+  .homeSection .homeContainer .homeText {
+    padding-left: 3rem;
+  }
+  .homeSection .homeContainer .homeText .title {
+    line-height: 4rem;
+    font-size: 55px;
+  }
+  .homeSection .homeContainer .homeText p {
+    font-size: 20px;
+    opacity: 0.8;
+  }
+  .homeSection .homeContainer .homeImage {
+    width: 900px;
+  }
+}/*# sourceMappingURL=frontend.css.map */

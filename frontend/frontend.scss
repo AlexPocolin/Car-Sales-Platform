@@ -1,0 +1,2628 @@
+:root{
+    --primaryColor: hsl(250, 84%, 67%);
+    --secondaryColor: hsl(249, 77%, 95%);
+    --headerColor: hsl(247, 93%, 95%);
+    --thirdColor: hsl(246, 71%, 97%);
+    --textColor: hsl(0, 0%, 64%);
+    --greyColor: hsl(0, 0%, 96%);
+    --whiteColor: hsl(260, 33%, 98%);
+    --blackColor: hsl(240, 1%, 26%);
+    --blackFade: hsl(0, 0%, 20%);
+    --backgroundColor: hsl(240, 100%, 99%);
+    --cardColor: rgb(215, 215, 218);
+    --purpleHoverColor: hsl(250, 35%, 39%);
+    --purpleCard:  hsl(246, 71%, 97%);
+    --trBg: hsl(246, 71%, 97%);
+    --trBgOdd: hsl(244, 88%, 93%);
+    --settingsBg: rgb(248, 248, 248);
+}
+
+body{
+    background: var(--backgroundColor);
+}
+
+// Action Button Styling
+.actionBtn{
+    position: fixed;
+    z-index: 10;
+    background: #7b63f1bf;
+    bottom: 5%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%);
+    width: 80%;
+    padding: .5rem;
+    text-align: center;
+    color: var(--whiteColor);
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    gap: 1rem;
+    justify-content: center;
+    backdrop-filter: blur(1.5px);
+
+    &:hover{
+        background: var(--primaryColor);
+    }
+
+
+}
+
+
+// Header/NavBar Styling
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 0 2rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    background: var(--headerColor);
+  
+    .logo {
+      font-size: 25px;
+      color: var(--primaryColor);
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+        .navBar {
+            position: absolute;
+            top: -18rem;
+            background: var(--primaryColor);
+            padding: 2rem;
+            border-radius: 1rem;
+            width: 80%;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            right: 50%;
+            z-index: 100;
+            transition: 0.4s ease;
+    
+            .navList {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            .navItems {
+                margin: 0.5rem 0;
+            
+                a {
+                color: var(--whiteColor);
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    background: var(--whiteColor);
+                    height: 2px;
+                    width: 0px;
+                    left: 0;
+                    bottom: -3px;
+                    transition: width 0.2s;
+                }
+                &:hover::after {
+                    width: 20px;
+                }
+                }
+            }
+            }
+
+            .smallDevices{
+                margin-top: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+
+                .btn{
+                    width: 100%;
+                    max-width: 200px;
+                }
+
+                .registerBtn{
+                    border: 1px solid var(--whiteColor);  
+                    color: var(--whiteColor);
+                    &:hover{
+                        background: var(--whiteColor);
+                        color: var(--primaryColor);
+                    }
+                }
+
+                .loginBtn{
+                    background: var(--whiteColor);
+
+                    border: 1px solid transparent; 
+                    &:hover{
+                        border: 1px solid var(--whiteColor);  
+                        background: none;
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+
+            .closeNavbar{
+               position: absolute;
+               bottom: -40px;
+               right: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+               background: var(--primaryColor);
+               border-radius: 50%;
+               height: 40px;
+               width: 40px;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+
+               .icon{
+                color: var(--whiteColor);
+                transition: .3s ease;
+                &:hover{
+                    transform: rotate(359deg);
+                }
+               }
+            }
+
+        }
+    
+        .largerDevices{
+            display: none;
+        }
+    }
+
+    .show {
+        top: 18rem;
+    }
+
+
+    .toggleBtn{
+        color: var(--primaryColor);
+        &:hover{
+            color: var(--blackColor);
+        }
+    }
+}
+
+// Home styling
+.homeSection{
+    padding: 5rem 1.5rem 2rem;
+    
+    background: var(--thirdColor);
+
+    .homeContainer{
+        gap: 2rem;
+        .homeText{
+            .text{
+             display: block;
+             background: white;
+             padding: 10px;
+             border-radius: 3px;
+             font-size: 14px;
+             color: var(--primaryColor);
+             width: max-content;
+
+            }
+            span{
+               color: var(--primaryColor);
+            }
+
+            .title{
+                color: var(--blackColor);
+                line-height: 2rem;
+                padding: 1rem 0;
+            }
+
+            p{
+                color: var(--blackColor);
+            }
+        }
+    }
+}
+
+// Guide Section
+.guideSection{
+    .secContainer{
+        .contentDiv{
+            gap: 1.5rem;
+            .singleDiv{
+                display: grid;
+                gap: .5rem;
+                text-align: center;
+
+                .iconDiv{
+                    width: max-content;
+                    margin: auto;
+                    padding: 10px 15px;
+                    border-radius: 10px;
+                    img{
+                        width: 50px;
+                    }
+
+                }
+                .purpleBg{
+                    background: rgb(255, 244, 225);
+                }
+                .orangeBg{
+                    background: rgb(225, 227, 255);
+                }
+                .maroonBg{
+                    background: rgb(216, 255, 206);
+                }
+
+                .guideDesc{
+                    .guideTitle{
+                        font-weight: 700;
+                        font-size: 15px;
+                        color: var(--blackColor);
+                    }
+
+                    p{
+                        padding: 0 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Popular Cars Styling
+.popularCars{
+    background: var(--thirdColor);
+    .secContainer{
+
+        .img{
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+       
+        .contentDiv{
+            display: grid;
+            gap: 2rem;
+            .filterBtns{
+                gap: 1rem;
+                grid-template-columns: repeat(2,1fr);
+                
+                 
+    
+                .singleFilter{
+                    justify-content: center;
+                    background: white;
+                    padding: 10px 15px;
+                    border-radius:3px;
+                    gap: .5rem;
+                    width: 100%;
+                    text-align: center;
+
+                    &:hover{
+                        background: var(--primaryColor);
+                        color: var(--whiteColor);
+
+                        .img{
+                            mix-blend-mode: luminosity;
+                        }
+                    }
+    
+                    .companyName{
+                        font-size: 14px;
+                    }
+                }
+
+                .active{
+                    background: var(--primaryColor);
+                    color: var(--whiteColor);
+
+                    .img{
+                        mix-blend-mode: luminosity;
+                    }
+                }
+
+               
+    
+               
+            } 
+
+            .carsContainer{
+                .singleCompany{
+                    .singleCar{
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Services Styling
+.services{
+    .secContainer{
+        .content{
+            .secText{
+                .headerDiv{
+                    padding-bottom: 1rem;
+                    .bigText{
+                        line-height: 1.8rem;
+                        color: var(--blackColor);
+                        font-size: 25px;
+                    }
+            
+                    p{
+                        color:var(--blackColor);
+                        font-size: 14px;
+                    }
+                }
+
+                .servicesGrid{
+                    gap: 1rem;
+                    .singleService{
+                        gap: .5rem;
+                        align-items: flex-start;
+
+                        &:hover{
+                            .serviceDesc{
+                                .serviceTitle{
+                                    color: var(--primaryColor);
+                                }
+                            }
+                        }
+
+                        .iconDiv{
+                            display: flex;
+                            align-items: center;
+                            transform: translateY(5px);
+                            padding: 5px;
+                            border-radius: 3px;
+                            background: var(--secondaryColor);
+
+                            .icon{
+                                font-size: 14px;
+                                color: var(--primaryColor);
+                            }
+                        }
+
+                        .serviceDesc{
+                            .serviceTitle{
+                                font-weight: 700;
+                                font-size: 14px;
+                                color: var(--blackColor);
+                            }
+                        }
+
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Subscription Section Styling
+.subscription{
+    padding: 3rem 0;
+    background: var(--thirdColor);
+
+  .secContent{
+    flex-direction: column;
+    gap: 2rem;
+
+    .textDiv{
+        .bigText{
+            line-height: 1.8rem;
+            color: var(--blackColor);
+            font-size: 25px;
+        }
+
+        p{
+            color:var(--blackColor);
+            font-size: 14px;
+            padding: 1rem 0;
+        }
+
+        .form{
+            background: white;
+            padding: 5px;
+            border-radius: 3px;
+            justify-content: space-between;
+
+            input{
+                border: none;
+                outline: none;
+                background: transparent;
+                padding: 0 5px;
+                font-weight:500;
+            }
+
+            .btn{
+                border-radius: 3px;
+                margin: inherit;
+            }
+        }
+
+    }
+  }
+}
+
+// Review Section Styling
+.review{
+    .secContainer{
+        .secHeading{
+            justify-content: space-between;
+            padding: 1rem 0;
+
+            .navBtns{
+                gap: .5rem;
+                .icon{
+                    padding: 3px 5px;
+                    background: var(--secondaryColor);
+                    border-radius:3px;
+                    font-size: 30px;
+                    cursor: pointer;
+                        &:hover{
+                        background: var(--primaryColor);
+                        color: var(--whiteColor);
+                    }
+                }
+ 
+            }
+        }
+
+        .reviewContainer{
+            gap: 1.5rem;
+
+            .singleReview{
+                transition: .3s ease-in-out;
+                border-radius: 10px;
+                transition: .3s ease;
+                .ImgDiv{
+                    height: 200px;
+                    width: 100%;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    border: 5px solid transparent;
+                    overflow: hidden;
+
+                    img{
+                       height: 100%;
+                       width: 100%;
+                    }
+                }
+
+               .reviewDetails{
+                    padding: 0 1rem 1rem;
+                    .reviewTitle{
+                        color: var(--blackColor);
+                        font-size: 16px;
+                        padding-top: 10px;
+                    }
+                    .desc{
+                        color: var(--blackColor);
+                        opacity: .7;
+                        font-size: 14px;
+                    }
+                    .reviewerDiv{
+                        justify-content: space-between;
+                        margin-top: 1rem;
+                        align-items: flex-start;
+                        .leftDiv{
+                            gap: .8rem;
+                            .reviewerImg{
+                                border: 2px solid var(--whiteColor);
+                                height: 40px;
+                                width: 40px;
+                                overflow: hidden;
+                                border-radius: 50%;
+                                box-shadow: 0 4px 5px rgb(222, 222, 222);
+                            }
+
+                            .aboutReviewer{
+                                .name{
+                                    color: var(--blackColor);
+                                    font-weight: 600;
+                                    padding-bottom: .5rem;
+                                    font-size: 15px;
+                                }
+                                p{
+                                    color: var(--textColor);
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+
+                        .rightDiv{
+                            
+                            gap: .3rem;
+                            .icon{
+                                color: rgb(255, 162, 0);
+                                font-size: 15px;
+                            }
+                            blockquote{
+                                font-weight: 600;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+               }
+
+                &:hover{
+                    transform: translateY(-7px);
+                    box-shadow: 0 4px 10px rgba(192, 206, 241, 0.537);
+
+                    .reviewDetails{
+                        padding: 0 1rem 1rem;
+                    }
+
+
+                }
+            }
+        }
+
+       
+    }
+}
+
+// Footer Styling
+.footer{
+    padding-top: 4rem;
+    
+    .footerContainer{
+        .footerMenuDiv{
+            padding: 2rem;
+            background: var(--thirdColor);
+            border-radius: 10px;
+            gap: 1.5rem;
+
+            .singleGrid{
+
+
+                .footerTitle{
+                    display: block;
+                    padding-bottom: .5rem;
+                    font-size: 16px;
+                    color: var(--blackColor);
+                    font-weight: 700;
+                }
+
+                .footerUl{
+                  gap: 5px;
+
+                  .footerLi{
+                    color: var(--textColor);
+                    &:hover{
+                        color: var(--blackColor);
+                        transform: translateX(5px);
+                        transition: .3s;
+                    }
+                  }
+                }
+            }
+        }
+
+        .lowerDiv{
+            padding: 1rem;
+            text-align: center;
+
+            .blockquote a{
+                color: var(--blackColor);
+
+                &:hover{
+                    color: var(--primaryColor);
+                }
+            }
+        }
+   } 
+}
+
+//SHOWROOM PAGE SCSS
+// Catalougue Styling
+.carCatalogue{
+   padding-top: 6rem;
+   .secContainer{
+       
+
+        .carsContainer{
+            .singleCompany{
+                .singleCar{
+                    background: var(--greyColor);
+                    transition: .3s ease;
+                    height: 100%;
+                    &:hover{
+                        background: var(--thirdColor);
+                        transform: translateY(-7px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+//SINGLE CAR DETAILS PAGE SCSS
+.carDetails{
+    .secContainer{
+        .mainSection{
+            width: 100%;
+            height: 60vh;
+            transform: translateY(-40px);
+            position: relative;
+          
+
+            &::after{
+                position: absolute;
+                content: '';
+                height: 100%;
+                width: 100%;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                background: linear-gradient(140deg, rgb(118, 118, 213), rgba(255, 255, 0, 0)
+                )
+                
+            }
+
+            .secText{
+                position: absolute;
+                z-index: 10;
+                color: var(--whiteColor);
+                left: 8%;
+                top: 20%;
+                max-width: 200px;
+                .carName{
+                    font-size:30px;
+                }
+                p{
+                    color: var(--whiteColor);
+                    line-height: 1rem;
+                }
+
+                .price{
+                    display: block;
+                    padding: 8px 15px;
+                    background: var(--whiteColor);
+                    width: max-content;
+                    border-radius: 5px;
+                    margin-top: .5rem;
+                    color: var(--primaryColor);
+                    font-weight: 700;
+                }
+            }
+
+
+            .mainImg{
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .carMenu {
+                position: absolute;
+                background: var(--thirdColor);
+                bottom: 0;
+                z-index: 2;
+                width: 100%;
+                align-items: center;
+                justify-content: space-between;
+
+                a{
+                    padding: 1rem .5rem;
+                    width: 100%;
+                    font-size: 14px;
+                    border-bottom: 3px solid transparent;
+                    text-align: center;
+
+                    &:hover{
+                        border-bottom: 3px solid var(--primaryColor);
+                        background: var(--secondaryColor);
+                        color: var(--primaryColor);
+                    }
+                }
+
+            }
+
+        }
+
+        .overviewSection, .featuresSection{
+
+            .secContainer{
+                .secTitleDiv{
+                    text-align: left;
+                }
+                .content{
+                    .singleCard{
+                        .title{
+                            color: var(--blackColor);
+                            display: block;
+                            font-size: 18px;
+                            font-weight: 600;
+                            padding-bottom: .5rem;
+                        }
+
+                        .item{
+                            font-size: 14px;
+                            color: var(--blackColor);
+                            opacity: .8;
+                        }
+                    }
+                }
+            }
+        }
+
+        .overviewSection{
+            // padding: 2rem 0 2rem;
+            .content{
+                gap: 1rem;
+                .span{
+                    font-size: 15px;
+                    .ans{
+                         color: var(--blackColor) ;
+                         font-weight: 600;
+    
+                    }
+                }
+            }
+        }
+
+        .gallerSection{
+            .secConatiner{
+                .secTitleDiv{
+                    text-align: left;
+                }
+
+                .content{
+                    gap: 1.5rem;
+                    .title{
+                        font-size: 18px;
+                        color: var(--blackColor);
+                        font-weight: 700;
+                        position: relative;
+ 
+                        &::after{
+                         content: '';
+                         height: 3px;
+                         width: 100px;
+                         position: absolute;
+                         background: var(--primaryColor);
+                         right: 0;
+                         top: 50%
+                        }
+                    }
+
+                    .exteriorDiv, .interior{
+                    
+                        .carImages{
+                         gap: 1rem;
+     
+                            .singleImage{
+                             height: 200px;
+                             width: 100%;
+                             border-radius:5px;
+                             overflow: hidden;
+                             position: relative;
+
+                             img{
+                                 width: 100%;
+                                 height: 100%;
+                                 object-fit: cover;
+                                  transition: 2s ease;
+                             }
+                            }
+
+                            .singleImage::after{
+                                content: '';
+                                height: 100%;
+                                width: 100%;
+                                background: #adbef188;
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                mix-blend-mode: hue;
+                            }
+
+                            .singleImage:hover::after{     
+                                    display: none;
+                                    mix-blend-mode: normal;
+
+                            }
+                            .singleImage:hover img{
+                                 transform: scale(1.1);
+                             }
+                            
+                        }
+                    }
+
+                }
+            }
+ 
+        }
+
+    }
+}
+
+// Alternatives Styling
+.alternatives{
+    .secContainer{
+        .carsContainer{
+            .singleCompany{
+                .singleCar{
+                    background: var(--greyColor);
+                    transition: .3s ease;
+
+                    &:hover{
+                        background: var(--thirdColor);
+                        transform: translateY(-7px);
+                    }
+                }
+            }
+
+            
+        }
+    }
+}
+
+.hide{
+    display: none;
+}
+.live{
+    display: grid;
+}
+
+// LOGIN PAGE CSS
+// Login Page Styling
+.loginPage, .signUp{
+    padding-top: 6rem;
+    flex-direction: column;
+
+    form{
+        width: 100%;
+    }
+    label{  
+        display: block;
+        font-weight: 600;
+        color: var(--blackColor);
+    }
+    
+    input{
+        display: block;
+        border: 2px solid transparent;
+        outline: none;
+        padding: 10px;
+        border-radius: 5px;
+        background: var(--secondaryColor); 
+        width: 100%;
+        margin-top: .2rem;
+        color: var(--primaryColor);
+        font-weight: 600;
+    
+        &:focus{
+            border: 2px solid var(--primaryColor);
+        }
+    }
+    
+    .btn{
+        border-radius: 5px;
+        gap: .3rem;
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .registerLink{
+        display: block;
+        padding-top: 1rem;
+        text-align: center;
+    }
+}
+
+// Car Review Styling
+.reviewSection{
+    .secContainer{
+        .formSection{
+      
+            .reviewForm{
+                gap: .8rem;
+                .singleField{
+                    gap: .5rem;
+                    label{
+                        color: var(--blackColor);
+                        font-weight: 600;
+                        opacity: .8;
+                        display: block;
+                    }
+
+                    input, textarea{
+                        background: var(--secondaryColor);
+                        font-weight: 700;
+                        width: 100%;
+                        color: var(--primaryColor);
+                        border: 2px solid transparent;
+                        &::placeholder{
+                            color: var(--blackColor);
+                            opacity: .7;
+                            font-weight: 500;
+                        }
+
+                        &:focus{
+                            border: 2px solid var(--primaryColor);
+                        }
+                    }
+
+                    textarea{
+                        border-radius: 3px;
+                        padding: 1rem;
+                        height: 200px;
+                    }
+                }
+
+                .primaryBtn{
+                    margin: auto;
+                    justify-content: center;
+                }
+
+                .btn{
+                margin: inherit;
+                    font-size: 17px;
+                }
+            }
+
+        }
+    }
+
+}
+
+// STAFF DETAILS PAGE
+// Staff Details Styling
+.staffDetails{
+    .secContanier{
+        .secTitleDiv{
+           text-align: left;
+           p{
+             text-align: left;
+             margin: 0;
+           }
+        }
+        .inforSection{
+            width: 100%;
+            gap: 1rem;
+            align-items: flex-start;
+            flex-direction: column;
+        
+            .leftDiv{
+                width: 100%;
+                // background: var(--trBg);
+                border-radius: 5px;
+                overflow: hidden;
+                height: 100%;
+
+                .topLeftDiv{
+                    gap: 1.5rem;
+                    
+        
+                    .imgDiv{
+                        height: 200px;
+                        width: 100%;
+                        // width: 200px;
+                        overflow: hidden;
+                        border-bottom-right-radius: 10px;
+                        background: #000;
+                        
+                        img{
+                            border-bottom-right-radius: 10px;
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+        
+                    .staffBio{
+                        padding-top: 1rem;
+                        flex: 1;
+                        .name{
+                            color: var(--primaryColor);
+                            font-size: 25px; 
+                        }
+        
+                        .badge{
+                            margin: .5rem 0;
+                            padding: 2px 10px;
+                            background: var(--primaryColor);
+                            width: max-content;
+                            border-radius: 5px;
+                            color: white;
+                            font-size: 13px;
+                            gap: .2rem;
+        
+                            .icon{
+                                font-size: 15px;
+                            }
+        
+                        }
+        
+                        .nationality,.lang,.time{
+                            font-size: 17px;
+                            padding: .2rem 0;
+                            span{
+                                color: var(--blackFade);
+                                opacity: .7;
+                                font-size: 500;
+                            }
+                        }
+                    }
+        
+                    .personalInfor{
+                        padding-top: 1rem;
+                       
+        
+                        h4{
+                            font-size: 20px;
+                            color: var(--blackColor);
+                            display: block;
+                            padding-bottom: .5rem;
+                        }
+        
+                        .properties,
+                        .ID,
+                        .exp,
+                        .comp{
+                            font-size: 17px;
+                            padding: .1rem 0;
+        
+                            span{
+                                color: var(--blackFade);
+                                opacity: .7;
+                                font-size: 500;
+                            }
+                        }
+                    }
+                } 
+        
+                .bottomLeftDiv{
+                    padding: 1rem 0;
+        
+                    h4{
+                       color: var(--primaryColor);
+                       font-size: 20px;
+                        padding-bottom: .5rem;
+                        justify-content: space-between;
+        
+                        span{
+                            height: 2px;
+                            width: 50%;
+                            background: var(--cardColor);
+                        }
+                    }
+                }
+            }
+        
+            .rightDiv{
+                display: flex;
+                gap: 1rem;
+                align-items: flex-start;
+                flex-direction: column;
+                width: 100%;
+
+                .topRightDiv, .reminderDiv{
+                    height: 100%;
+                    width: 100%;
+                    background: var(--trBg);
+                    padding: 1rem ;
+                    text-align: center;
+                    border-radius: 5px;
+        
+                    h3{
+                        padding: .5rem 0;
+                        color: var(--primaryColor);
+                    }
+        
+        
+        
+                    .phone, .email a{
+                        background: var(--purpleHoverColor);
+                        text-align: center;
+                        justify-content: center;
+                        margin: .3rem 0;
+                        padding: .4rem .8rem;
+                        border-radius: 5px;
+                        color: white;
+                        gap: .3rem;
+                        width: 100%;
+                        border: 1.5px solid transparent;
+                        transition: .3s ease;
+                        cursor: pointer;
+        
+                        &:hover{
+                            background: var(--purpleCard);
+                            color: var(--primaryColor);
+                            border: 1.5px solid var(--primaryColor);
+                        }
+                        
+                    }
+        
+                    .socials{
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 1rem;
+                        gap: .5rem;
+        
+                        .icon{
+                            margin-top: 2rem;
+                            color: var(--primaryColor);
+                            padding: 5px 10px;
+                            background: white;
+                            border-radius: 50%;
+                            transition: .3s ease;
+        
+                            &:hover{
+                                background: var(--purpleHoverColor);
+                                color: white;
+                            }
+                        }
+                    }
+                }
+        
+                .reminderDiv{
+                    textarea{
+                        width: 100%;
+                        height: 70px;
+                        border: none;
+                        padding: 1rem;
+                        border-radius: 5px;
+                        border: 2px solid transparent;
+                        transition: .3s ease;
+                        &:hover{
+                            outline: none;
+                            border: 2px solid var(--primaryColor);
+                        }
+                    }
+        
+                    .btn{
+                        width: 100%;
+                        justify-content: center;
+                        gap: .5rem;
+                        border-radius: 5px;
+                        background: var(--primaryColor);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+// Media Queries
+@media screen and (min-width: 520px) {
+    .homeSection{
+        .homeContainer{
+            .homeText{
+                p{
+                    font-size: 18px;
+                    max-width: 500px;
+                }
+            }
+        }
+    }
+
+    // Guide Section
+    .guideSection{
+        .secContainer{
+            .contentDiv{
+                gap: 1.5rem;
+                grid-template-columns: repeat(2,1fr);
+                .singleDiv{
+                    gap: 1rem;
+
+                    .guideDesc{
+                        .guideTitle{
+                            font-size: 18px;
+                        }
+
+                        p{
+                            padding: 0 2rem;
+                          
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Popular Cars Styling
+    .popularCars, .carCatalogue, .alternatives{
+        .secContainer{
+        
+            .filterBtns{
+                grid-template-columns: repeat(4,1fr) !important;
+            }
+
+            .carsContainer{
+                .singleCompany{
+                    .singleCar{
+
+                        .price_seller{
+        
+                            .btn{
+                                font-size: 16px;
+                                padding: .4rem 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+              
+            
+
+            
+           
+        }
+    }
+
+    // Services Styling
+    .services{
+        .secContainer{
+            .content{
+
+                .secText{
+                    .headerDiv{
+                        padding-bottom: 1.5rem;
+                        .bigText{
+
+                            font-size: 30px;
+                        }
+                
+                        p{
+                            font-size: 16px;
+                        }
+                    }
+
+                    .servicesGrid{
+                        .singleService{
+
+                            .iconDiv{
+
+                                .icon{
+                                    font-size: 17px;
+                                }
+                            }
+
+                            .serviceDesc{
+                                .serviceTitle{
+                                    font-size: 18px;
+                                }
+
+                                p{
+                                    font-size: 16px;
+                                }
+                            }
+
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Subscription Section Styling
+    .subscription{
+        .secContent{
+            // flex-direction: column;
+
+            .textDiv{
+                .bigText{
+                    font-size: 30px;
+                }
+
+                p{
+                    font-size: 16px;
+                }
+
+                .form{
+
+                    input{
+                        border: none;
+                        outline: none;
+                        background: transparent;
+                        padding: 0 5px;
+                        font-weight:500;
+                    }
+
+                    .btn{
+                        border-radius: 3px;
+                        margin: inherit;
+                    }
+                }
+
+            }
+        }
+    }
+
+    // Footer Section Styling
+    .footer{
+        .footerContainer{
+            .footerMenuDiv{
+                grid-template-columns: repeat(2,1fr);
+
+                .singleGrid{
+                    margin: auto;
+                    .footerTitle{
+                        font-size: 17px;
+                    }
+
+                    .footerUl{
+                        gap:5px;
+
+                        .footerLi{
+                            color: var(--textColor);
+                        }
+                    }
+                }
+            }
+
+            .lowerDiv{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    // Car Details Styling
+    .carDetails{
+        .secContainer{
+            .mainSection{
+    
+                .secText{
+                    max-width: 300px;
+                    .carName{
+                        font-size:35px;
+                    }
+                    p{
+                        font-size: 16px;
+                        color: var(--whiteColor);
+                        line-height: 1.5rem;
+                    }
+    
+                    .price{
+                        padding: 8px 20px;
+                        margin-top: 1rem;
+                        font-size: 20px;
+                    }
+                }
+    
+
+                .carMenu {    
+                    a{
+                        font-size: 15px;
+                    }
+                }
+    
+            }
+    
+            .overviewSection, .featuresSection{
+    
+                .secContainer{
+                    .secTitleDiv{
+                        p{
+                            text-align: left;
+                            margin: 0;
+                            font-size: 16px;
+                        }
+                    }
+                    .content{
+                        grid-template-columns: repeat(2,1fr);
+                        .singleCard{
+                            .title{
+                                font-size: 20px;
+                            }
+    
+                            .item{
+                                font-size: 16px;
+                            }
+
+                        }
+
+                    }
+                }
+            }
+    
+            .overviewSection{
+                .content{
+
+                    grid-template-columns: repeat(2,1fr);
+                    align-items: start;
+                    .span{
+                        font-size: 18px;
+                    }
+                }
+            }
+    
+            .gallerSection{
+                .secConatiner{
+                    .secTitleDiv{
+ 
+                        p{
+                            text-align: left;
+                            margin: 0;
+                            font-size: 16px;
+                        }
+                    }
+    
+                    .content{
+                        .title{
+                            font-size: 20px;
+                        }
+
+                        .carImages{
+                            grid-template-columns: repeat(2,1fr);
+                        }
+                    }
+                }
+    
+                
+            }
+    
+        }
+    }
+
+    // login and SignUp Styling
+    .loginPage, .signUp{
+    
+        .registerLink{
+            text-align: left;
+        }
+
+        .secContainer{
+            .formSection{
+                .loginForm, .signUpForm{
+                    grid-template-columns: repeat(2,1fr);
+                    .btn{
+                        transform: translateY(12px);
+                    }
+                }
+            }
+
+        }
+    }
+
+    // Staff Details Styling
+    .staffDetails{
+
+        .secContanier{
+            p{
+                font-size: 18px;
+                line-height: 1.7rem;
+            }
+
+            .inforSection{
+                flex-direction: column;
+            
+                .leftDiv{
+                    width: 100%;
+                    // background: var(--trBg);
+
+                    .topLeftDiv{
+                        gap: 1.5rem;
+                        grid-template-columns: repeat(2,1fr);
+                        align-items: start;
+
+                        .imgDiv{
+                            height: 200px;
+                            // width: 200px;
+                        }
+            
+                        .staffBio{
+                            padding-top: 1rem;
+                            flex: 1;
+                            .name{
+                                color: var(--primaryColor);
+                                font-size: 25px; 
+                            }
+            
+                        }
+                    } 
+                }
+            
+                .rightDiv{
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+
+    // Staff Details Styling
+    .reviewSection{
+        .secContainer{
+            .formSection{
+          
+                .reviewForm{
+                    gap: .8rem;
+                    align-items: start;
+                    grid-template-columns: repeat(2,1fr);
+                }
+    
+            }
+        }
+    
+    }
+ 
+}
+
+
+@media screen and (min-width: 620px) {
+
+    // Popular Cars Styling
+    .popularCars, .carCatalogue, .alternatives{
+        .secContainer{
+
+            .carsContainer{
+                .singleCompany{
+                    grid-template-columns: repeat(2,1fr);
+
+                    .singleCar{
+
+                        .price_seller{
+    
+                            .btn{
+                                font-size: 16px;
+                                padding: .4rem 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+
+    // Services Styling
+    .services{
+        .secContainer{
+            .content{
+
+                .secText{
+                    .headerDiv{
+                        padding-bottom: 1.5rem;
+                        .bigText{
+
+                            font-size: 30px;
+                        }
+                
+                        p{
+                            font-size: 16px;
+                        }
+                    }
+
+                    .servicesGrid{
+                       padding: 1rem 0 2rem;
+                       grid-template-columns: repeat(2,1fr);
+                        .singleService{
+
+                            .iconDiv{
+
+                                .icon{
+                                    font-size: 17px;
+                                }
+                            }
+
+                            .serviceDesc{
+                                .serviceTitle{
+                                    font-size: 18px;
+                                }
+
+                                p{
+                                    font-size: 16px;
+                                }
+                            }
+
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Review Section Styling
+    .review{
+        .secContainer{
+            .reviewContainer{
+                gap: 1.5rem;
+                grid-template-columns: repeat(2,1fr);
+
+                .singleReview{
+                    .reviewDetails{
+                        .reviewTitle{
+                            font-size: 18px;
+                        }
+                        .desc{
+                            font-size: 16px;
+                        }
+                        .reviewerDiv{
+                            .leftDiv{
+                                .reviewerImg{
+                                    height: 50px;
+                                    width: 50px;
+                                }
+
+                                .aboutReviewer{
+                                    .name{
+                                        font-size: 16px;
+                                    }
+                                    p{
+                                        font-size: 15px;
+                                    }
+                                }
+                            }
+
+                            .rightDiv{
+                                .icon{
+
+                                    font-size: 17px;
+                                }
+                                blockquote{
+
+                                    font-size: 17px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Catalougue Styling
+    .carCatalogue{
+        padding-top: 6rem;
+        .secContainer{
+            .searchField{
+                .form{
+
+                    .inputDiv{
+                        gap: .5rem;
+                        label{
+                            color: var(--blackColor);
+                            font-weight: 600;
+                            opacity: .8;
+                            display: block;
+                        }
+    
+                        input{
+                            background: var(--secondaryColor);
+                            font-weight: 700;
+                            color: var(--primaryColor);
+                            border: 2px solid transparent;
+                            &::placeholder{
+                                color: var(--blackColor);
+                                opacity: .7;
+                            }
+    
+                            &:focus{
+                                border: 2px solid var(--primaryColor);
+                            }
+                        }
+                    }
+    
+                    .btn{
+                        margin: inherit;
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 680px) {
+
+    // Guide Section
+    .guideSection{
+        .secContainer{
+            .contentDiv{
+                gap: 1.5rem;
+                grid-template-columns: repeat(3,1fr);
+                .singleDiv{
+                    gap: 1rem;
+
+                    .guideDesc{
+                        .guideTitle{
+                            font-size: 18px;
+                        }
+
+                        p{
+                            padding: 0 2rem;
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    // Subscription Section Styling
+    .subscription{
+        .secContent{
+            // flex-direction: column;
+
+            .textDiv{
+                .bigText{
+                    font-size: 33px;
+                }
+
+                p{
+                    font-size: 16px;
+                }
+
+                .form{
+
+                    input{
+                        font-weight:600;
+                        font-size: 16px;
+                    }
+
+                    .btn{
+                        border-radius: 3px;
+                        margin: inherit;
+                        font-size: 18px;
+                    }
+                }
+
+               
+
+            }
+
+            .sectionImage{
+                justify-content: center;
+                img{
+                    max-width: 80%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .homeSection{  
+        .homeContainer{
+            .homeText{
+                .text{
+                 font-size: 18px;
+                }
+    
+                .title{
+                    line-height: 2.5rem;
+                    font-size: 40px;
+                    max-width: 700px;
+                }
+            }
+        }
+    }
+
+    // Guide Section
+    .guideSection{
+        .secContainer{
+            .contentDiv{
+                padding: 2rem 0;
+                .singleDiv{
+                    .iconDiv{
+                        img{
+                            width: 90px;
+                        }
+    
+                    }
+                    .guideDesc{
+                        .guideTitle{
+                            font-size: 23px;
+                        }
+
+                        p{
+                            font-size: 17px;
+                          
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Action Button Styling
+    .actionBtn{
+       width: 50%;
+    }
+
+    // login and SignUp Styling
+    .loginPage, .signUp{
+    
+        .registerLink{
+            text-align: left;
+        }
+
+        .secContainer{
+            .formSection{
+                .loginForm, .signUpForm{
+                    grid-template-columns: repeat(3,1fr);
+                    .btn{
+                        transform: translateY(0px);
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .header {
+        padding: 0 2rem;
+
+        .navBar {
+            .navList {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .navItems {
+                margin: 0 1rem;
+            
+                a {
+                    color: var(--blackColor);
+                    position: relative;
+                    font-size: 14px;
+                    font-weight: 600;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        background: var(--primaryColor);
+                        height: 2px;
+                        width: 0px;
+                        left: 0;
+                        bottom: -3px;
+                        transition: width 0.2s;
+                    }
+                
+                    &:hover{
+                        color: var(--primaryColor);
+                        &::after {
+                            width: 20px;
+                        }
+                    }
+                }
+            }
+            }
+
+        }
+
+        .closeNavbar, .toggleBtn, .smallDevices{
+            display: none;
+        }
+    
+        .largerDevices{
+            display: flex;
+            gap: 1rem;
+            .btn{
+                width: 100%;
+                max-width: 200px;
+                padding: .5rem 2rem;
+                font-weight: 600;
+            }
+
+            .registerBtn{
+                border: 1px solid var(--primaryColor);  
+                color: var(--primaryColor);
+                &:hover{
+                    background: var(--primaryColor);
+                    color: var(--whiteColor);
+                }
+            }
+
+            .loginBtn{
+                background: var(--primaryColor);
+                border: 1px solid transparent; 
+                color: var(--whiteColor);
+                &:hover{
+                    border: 1px solid var(--primaryColor);  
+                    background: none;
+                    color: var(--primaryColor);
+                }
+            }
+        }
+        
+    }
+
+    .homeSection{  
+        .homeContainer{
+            .homeText{
+                .text{
+                 font-size: 18px;
+                }
+    
+                .title{
+                    line-height: 2.5rem;
+                    font-size: 40px;
+                    max-width: 700px;
+                }
+            }
+
+            .homeImage{
+                img{
+                    max-width: 80%;
+                    margin: auto
+                }
+            }
+        }
+    }
+
+    // Services Styling
+    .services{
+        .secContainer{
+            .content{
+
+                .secText{
+                    .headerDiv{
+                        padding-bottom: 1.5rem;
+                        .bigText{
+
+                            font-size: 30px;
+                        }
+                
+                        p{
+                            font-size: 16px;
+                        }
+                    }
+
+                    .servicesGrid{
+
+                        .singleService{
+
+                            .iconDiv{
+
+                                .icon{
+                                    font-size: 17px;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+     // Staff Details Styling
+    .staffDetails{
+
+        .secContanier{
+            p{
+                font-size: 18px;
+                line-height: 1.7rem;
+            }
+
+            .inforSection{
+                flex-direction: column;
+            
+                .leftDiv{
+                    width: 100%;
+                    // background: var(--trBg);
+
+                    .topLeftDiv{
+                        gap: 1.5rem;
+                        grid-template-columns: repeat(3,1fr);
+                        align-items: start;
+
+                        .imgDiv{
+                            height: 200px;
+                            // width: 200px;
+                        }
+            
+                        .staffBio{
+                            padding-top: 1rem;
+                            flex: 1;
+                            .name{
+                                color: var(--primaryColor);
+                                font-size: 25px; 
+                            }
+            
+                        }
+                    } 
+                }
+            
+                .rightDiv{
+                    display: flex;
+                    align-items: start;
+                    flex-direction: row;
+                    gap: 1rem;
+                }
+            }
+        }
+    }
+     
+    // Footer Section Styling
+    .footer{
+        .footerContainer{
+            .footerMenuDiv{
+                grid-template-columns: repeat(3,1fr);
+            }
+        }
+    }
+
+
+
+}
+
+@media screen and (min-width: 840px) {
+    .header {
+        padding: 0 4rem;
+
+        .navBar {
+            .navList {
+                .navItems {
+                    a {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+        }  
+    }
+
+    .homeSection{  
+        .homeContainer{
+            height: 70vh;
+            grid-template-columns: repeat(2,1fr);
+            overflow: hidden;
+            .homeText{
+                padding-left: 2rem;
+                .text{
+                 font-size: 18px;
+                }
+    
+                .title{
+                    line-height: 2.5rem;
+                    font-size: 45px;
+                }
+
+                p{
+                    font-size: 16px;
+                }
+            }
+
+            .homeImage{
+                width: 800px;
+            }
+        }
+    }
+   // Footer Section Styling
+    .footer{
+        .footerContainer{
+            padding: 2rem 0;
+            .footerMenuDiv{
+                grid-template-columns: repeat(4,1fr);
+            }
+        }
+    }
+
+     // Car Details Styling
+    .carDetails{
+        .secContainer{
+            .mainSection{
+    
+                .secText{
+                    max-width: 400px;
+                    padding-left: 3rem;
+                    .carName{
+                        font-size:45px;
+                    }
+                    p{
+                        font-size: 16px;
+                        color: var(--whiteColor);
+                        line-height: 1.5rem;
+                    }
+    
+                    .price{
+                        padding: 8px 20px;
+                        margin-top: 1rem;
+                        font-size: 20px;
+                    }
+                }
+    
+
+                .carMenu {    
+                    a{
+                        font-size: 15px;
+                    }
+                }
+    
+            }
+    
+            .overviewSection, .featuresSection{
+    
+                .secContainer{
+                    .secTitleDiv{
+                        p{
+                            text-align: left;
+                            margin: 0;
+                            font-size: 16px;
+                        }
+                    }
+                    .content{
+                        grid-template-columns: repeat(2,1fr);
+                        .singleCard{
+                            .title{
+                                font-size: 20px;
+                            }
+    
+                            .item{
+                                font-size: 16px;
+                            }
+
+                        }
+
+                    }
+                }
+            }
+    
+            .overviewSection{
+                .content{
+
+                    grid-template-columns: repeat(2,1fr);
+                    align-items: start;
+                    .span{
+                        font-size: 18px;
+                    }
+                }
+            }
+    
+            .gallerSection{
+                .secConatiner{
+                    .secTitleDiv{
+ 
+                        p{
+                            text-align: left;
+                            margin: 0;
+                            font-size: 16px;
+                        }
+                    }
+    
+                    .content{
+                        .title{
+                            font-size: 20px;
+                        }
+
+                        .carImages{
+                            grid-template-columns: repeat(2,1fr);
+                        }
+                    }
+                }
+    
+                
+            }
+    
+        }
+    }
+}
+
+@media screen and (min-width: 1040px) {
+
+    // Popular Cars Styling
+    .popularCars, .carCatalogue, .alternatives{
+        .secContainer{
+           
+            .carsContainer{
+                .singleCompany{
+                    grid-template-columns: repeat(3,1fr);
+                }
+            }
+        }
+    }
+
+    // Subscription Section Styling
+    .subscription{
+        .secContent{
+            flex-direction: row;
+        }
+    }
+
+    // Review Section Styling
+    .review{
+        .secContainer{
+            .reviewContainer{
+                gap: 1.5rem;
+                grid-template-columns: repeat(3,1fr);
+
+                .singleReview{
+                    .reviewDetails{
+                        .reviewTitle{
+                            font-size: 18px;
+                
+                        }
+                        .desc{
+                            font-size: 16px;
+                        }
+                        .reviewerDiv{
+                            .leftDiv{
+                                .reviewerImg{
+                                    height: 50px;
+                                    width: 50px;
+                                }
+
+                                .aboutReviewer{
+                                    .name{
+                                        font-size: 16px;
+                                    }
+                                    p{
+                                        font-size: 15px;
+                                    }
+                                }
+                            }
+
+                            .rightDiv{
+                                .icon{
+
+                                    font-size: 17px;
+                                }
+                                blockquote{
+
+                                    font-size: 17px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Catalougue Styling
+    .carCatalogue{
+        .secContainer{
+            .searchField{
+                .form{
+                    grid-template-columns: repeat(4,1fr);
+                }
+            }
+        }
+    }
+
+      // Car Details Styling
+      .carDetails{
+        .secContainer{
+            .mainSection{
+                height: 70vh;
+
+                .secText{
+                    max-width: 600px;
+                    .carName{
+                        font-size:55px;
+                    }
+                    p{
+                        font-size: 18px;
+
+                    }
+    
+                    .price{
+
+                        font-size: 25px;
+                    }
+                }
+
+    
+            }
+    
+            .overviewSection, .featuresSection{
+    
+                .secContainer{
+                    .secTitleDiv{
+                        p{
+                            text-align: left;
+                            margin: 0;
+                            font-size: 18px;
+                        }
+                    }
+                    .content{
+                        grid-template-columns: repeat(2,1fr);
+                        .singleCard{
+                            .title{
+                                font-size: 22px;
+                            }
+    
+                            .item{
+                                font-size: 18px;
+                            }
+
+                        }
+
+                    }
+                }
+            }
+    
+            .overviewSection{
+                .content{
+
+                    grid-template-columns: repeat(2,1fr);
+                    align-items: start;
+                    .span{
+                        font-size: 18px;
+                    }
+                }
+            }
+    
+            .gallerSection{
+                .secConatiner{
+                    .secTitleDiv{
+ 
+                        p{
+                            text-align: left;
+                            margin: 0;
+                            font-size: 16px;
+                        }
+                    }
+    
+                    .content{
+                        .title{
+                            font-size: 22px;
+                        }
+
+                        .carImages{
+                            grid-template-columns: repeat(3,1fr);
+                        }
+                    }
+                }
+    
+                
+            }
+    
+        }
+    }
+
+    // Action Button Styling
+    .actionBtn{
+        width: 20%;
+        transform: translateX(140%);
+    }
+
+    // Staff Details Styling
+    .reviewSection{
+        .secContainer{
+            .formSection{
+                .reviewForm{
+                    gap: .8rem;
+                    align-items: start;
+                    grid-template-columns: repeat(2,1fr);
+                }
+    
+            }
+        }
+    
+    }
+     
+    
+
+    
+
+}
+
+@media screen and (min-width: 1124px) {
+    // Services Styling
+    .services{
+        .secContainer{
+            .content{
+
+                .secText{
+                    .headerDiv{
+                        padding-bottom: 1.5rem;
+                        .bigText{
+
+                            font-size: 35px;
+                            padding-bottom: .5rem;
+                        }
+                
+                        p{
+                            font-size: 18px;
+                        }
+                    }
+
+                    .servicesGrid{
+                       gap: 3rem;
+                       grid-template-columns: repeat(3,1fr);
+                        .singleService{
+
+                            .iconDiv{
+
+                                .icon{
+                                    font-size: 20px;
+                                }
+                            }
+
+                            .serviceDesc{
+                                .serviceTitle{
+                                    font-size: 20px;
+                                }
+
+                                p{
+                                    font-size: 17px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+     // login and SignUp Styling
+     .loginPage, .signUp{
+    
+        .registerLink{
+            text-align: left;
+        }
+
+        .secContainer{
+            .formSection{
+                .loginForm, .signUpForm{
+                    grid-template-columns: repeat(4,1fr);
+                    .btn{
+                        transform: translateY(14px);
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media screen and (min-width: 1140px) {
+    .header {
+        padding: 0 6rem;
+        height: 5rem;
+
+        .logo {
+        font-size: 30px;
+        }
+        .navBar {
+            .navList {
+                .navItems {
+                    a {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+        }
+
+        
+    }
+
+    .homeSection{  
+        .homeContainer{
+            height: 80vh;
+            padding: 3rem;
+
+            .homeText{
+                padding-left: 3rem;
+
+    
+                .title{
+                    line-height: 3rem;
+                    font-size: 50px;
+                }
+
+                p{
+                    font-size: 16px;
+                }
+            }
+
+            .homeImage{
+                width: 800px;
+            }
+        }
+    }
+
+    // Catalougue Styling
+    .carCatalogue{
+        .secContainer{
+            .searchField{
+                padding-bottom: 3rem;
+                .form{
+                    grid-template-columns: repeat(5,1fr);
+                }
+            }
+        }
+    }
+
+    // Staff Details Styling
+    .staffDetails{
+
+        .secContanier{
+            p{
+                font-size: 18px;
+                line-height: 1.7rem;
+            }
+
+            .inforSection{
+                flex-direction: row;
+                gap: 2rem;
+            
+                .leftDiv{
+                    width: 100%;
+                    // background: var(--trBg);
+                    flex-basis: 70%;
+
+                    .topLeftDiv{
+                        gap: 1.5rem;
+                        grid-template-columns: repeat(3,1fr);
+                        align-items: start;
+
+                        .imgDiv{
+                            height: 200px;
+                            // width: 200px;
+                        }
+            
+                        .staffBio{
+                            padding-top: 1rem;
+                            flex: 1;
+                            .name{
+                                color: var(--primaryColor);
+                                font-size: 25px; 
+                            }
+            
+                        }
+                    } 
+                }
+            
+                .rightDiv{
+                    flex-basis: 30%;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: 1240px) {
+    .header {
+        padding: 0 9.5rem;
+    }
+
+    .homeSection{  
+        .homeContainer{
+            padding: 5rem;
+
+            .homeText{
+                padding-left: 3rem;
+
+    
+                .title{
+                    line-height: 4rem;
+                    font-size: 55px;
+                }
+
+                p{
+                    font-size:20px;
+                    opacity: .8;
+                }
+            }
+
+            .homeImage{
+                width: 900px;
+            }
+        }
+    }
+
+}
+
+
+
+
+
+  
+  
+
+  
+  
