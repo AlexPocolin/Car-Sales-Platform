@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 0.2s ease-in-out;
+  font-family: "Jost", sans-serif;
+}
+
+:root {
+  --primaryColor: #7a63f1;
+  --secondaryColor: #ebe8fc;
+  --headerColor: #e8e5fe;
+  --thirdColor: #f4f3fd;
+  --textColor: #a3a3a3;
+  --greyColor: #f4f4f4;
+  --whiteColor: hsl(260, 33%, 98%);
+  --blackColor: #434344;
+  --backgroundColor: #fbfbff;
+}
+
+html {
+  font-size: 95%;
+  scroll-behavior: smooth;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+p {
+  color: var(--textColor);
+  line-height: 1.4rem;
+  font-size: 14px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 8px 15px;
+  font-weight: 600;
+  margin: auto;
+  background: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.primaryBtn {
+  background: var(--primaryColor);
+  font-weight: 600;
+  color: var(--whiteColor);
+  font-size: 12px;
+}
+.primaryBtn:hover {
+  background: var(--secondaryColor);
+  color: var(--blackColor);
+}
+
+.section {
+  padding: 4rem 0 2rem;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+input, textarea {
+  border: none;
+  outline: none;
+  padding: 10px;
+  background: none;
+  border-radius: 3px;
+}
+
+.icon {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.secTitle {
+  color: var(--blackColor);
+  font-size: 20px;
+}
+
+.secTitleDiv {
+  text-align: center;
+  padding-bottom: 1.5rem;
+  margin: auto;
+}
+.secTitleDiv .secTitle {
+  font-size: 25px;
+  font-weight: 700;
+}
+.secTitleDiv p {
+  padding: 0.5rem 0;
+}
+
+.success {
+  background: rgb(119, 191, 119);
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  color: white;
+}
+
+.fail {
+  background: rgb(191, 119, 127);
+  padding: 0.3rem 1.5rem;
+  border-radius: 5px;
+  color: white;
+}
+
+.carsContainer {
+  margin-top: 2rem;
+}
+.carsContainer .singleCompany {
+  gap: 1.5rem;
+}
+.carsContainer .singleCompany .singleCar {
+  padding: 1rem;
+  border-radius: 10px;
+  background: var(--whiteColor);
+  border: 2px solid var(--whiteColor);
+}
+.carsContainer .singleCompany .singleCar .imgDiv {
+  height: 200px;
+  width: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.carsContainer .singleCompany .singleCar .imgDiv img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.carsContainer .singleCompany .singleCar .carTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--blackColor);
+  padding-bottom: 0.5rem;
+}
+.carsContainer .singleCompany .singleCar .properties {
+  opacity: 0.5;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+}
+.carsContainer .singleCompany .singleCar .properties .singleProperty {
+  gap: 0.5rem;
+  font-size: 14px;
+  font-weight: 600;
+}
+.carsContainer .singleCompany .singleCar .price_seller {
+  padding-top: 1rem;
+  border-top: 1px solid var(--greyColor);
+  justify-content: space-between;
+}
+.carsContainer .singleCompany .singleCar .price_seller .price {
+  font-weight: 700;
+  color: var(--blackColor);
+  font-size: 20px;
+}
+.carsContainer .singleCompany .singleCar .price_seller .btn {
+  margin: inherit;
+}
+.carsContainer .singleCompany .singleCar:hover {
+  background: var(--secondaryColor);
+  border: 2px solid var(--whiteColor);
+}
+.carsContainer .singleCompany .singleCar:hover .imgDiv img {
+  transform: scale(1.1);
+  transition: 1s ease;
+}
+
+.searchField .form {
+  gap: 0.8rem;
+}
+.searchField .form .inputDiv {
+  gap: 0.5rem;
+}
+.searchField .form .inputDiv label {
+  color: var(--blackColor);
+  font-weight: 600;
+  opacity: 0.8;
+  display: block;
+}
+.searchField .form .inputDiv input {
+  background: var(--secondaryColor);
+  font-weight: 700;
+  color: var(--primaryColor);
+  border: 2px solid transparent;
+}
+.searchField .form .inputDiv input::-moz-placeholder {
+  color: var(--blackColor);
+  opacity: 0.7;
+}
+.searchField .form .inputDiv input::placeholder {
+  color: var(--blackColor);
+  opacity: 0.7;
+}
+.searchField .form .inputDiv input:focus {
+  border: 2px solid var(--primaryColor);
+}
+.searchField .form .btn {
+  margin: inherit;
+  font-size: 17px;
+}
+
+@media screen and (min-width: 520px) {
+  .secTitleDiv {
+    padding-bottom: 3rem;
+  }
+  .secTitleDiv .secTitle {
+    font-size: 30px;
+  }
+  .secTitleDiv p {
+    max-width: 70%;
+    text-align: center;
+    margin: auto;
+  }
+  .searchField .form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 750px) {
+  .secTitleDiv {
+    padding-bottom: 3rem;
+  }
+  .secTitleDiv .secTitle {
+    font-size: 30px;
+  }
+  .secTitleDiv p {
+    max-width: 70%;
+    font-size: 18px;
+  }
+  .searchField .form {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .searchField .form .searchBtn {
+    transform: translateY(16px);
+  }
+}
+@media screen and (min-width: 960px) {
+  .secTitleDiv {
+    padding-bottom: 4rem;
+  }
+  .secTitleDiv .secTitle {
+    font-size: 35px;
+  }
+  .secTitleDiv p {
+    max-width: 55%;
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 840px) {
+  .section {
+    padding: 6rem 0 4rem;
+  }
+  .container {
+    width: 75%;
+    margin: auto;
+  }
+}
+::-moz-selection {
+  background: var(--primaryColor);
+  color: white;
+}
+::selection {
+  background: var(--primaryColor);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  background: var(--secondaryColor);
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primaryColor);
+  border-radius: 3rem;
+}/*# sourceMappingURL=App.css.map */
